@@ -1,0 +1,65 @@
+{% extends "basis_rooms.html" %}
+{% load static %}
+
+
+{% block css %}
+    <link href="{% static "vendor/css/room_details.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-lg-3">
+
+                <h1 class="my-4">Номери</h1>
+                <div class="list-group">
+                    {% for category in room_category %}
+                        <a href="{% url "main_page:category" category.persons %}" class="list-group-item">
+                            {{ category.title }}
+                        </a>
+                    {% endfor %}
+                </div>
+
+            </div>
+            <!-- /.col-lg-3 -->
+            <div class="col-lg-9 mt-4">
+                <div class="row">
+                    {% for room in rooms %}
+                        <div class="col-lg-4 col-md-6 mb-4">
+                            <div class="card h-100">
+                                <a href="#">
+                                    <img class="card-img-top"
+                                         src="{{ room.title_photo.url }}"
+                                         alt="Світлина номера">
+                                </a>
+                                <div class="card-body">
+                                    <h4 class="card-title" style="font-family: SansSerif,sans-serif; font-size: larger;">
+                                        <a>{{ room.title }}</a>
+                                    </h4>
+                                    <h5 style="text-align: right">{{ room.price }} UAH</h5>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a class="btn btn-outline-success"
+                                       href="{% url "main_page:room_details" room.id %}">
+                                        Переглянути деталі
+                                    </a>
+                                </div>
+                                <div class="card-footer text-center">
+                                    <a class="btn btn-outline-success"
+                                       href="{% url "main_page:reservation" room.id %}">
+                                        Забронювати
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    </div>
+{% endblock %}

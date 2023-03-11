@@ -1,0 +1,50 @@
+body {
+    padding-top: 56px;
+}
+
+.wrap {
+    display: flex;
+
+}
+
+.my-wrap {
+    display: flex;
+}
+
+.my-slider {
+    padding: 0;
+}
+
+.my-slider .carousel-item {
+    display: flex;
+    max-height: 720px;
+}
+
+.desc-and-button {
+    display: flex;
+    flex-direction: column;
+    padding: 40px 30px;
+    max-width: 30%;
+    max-height: 720px;
+    /*height: 720px;*/
+    /*overflow: scroll;*/
+    overscroll-behavior: contain;
+}
+
+.carousel-item {
+    max-height: 720px;
+}
+
+.carousel-item img {
+    object-fit: contain;
+}
+
+.heading-text h2 {
+    padding: 0 0 20px 0;
+}
+
+.heading-text {
+    height: 720px;
+    width: 400px;
+    /*overscroll-behavior-x: contain;*/
+}

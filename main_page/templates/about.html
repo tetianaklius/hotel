@@ -1,0 +1,58 @@
+{% load static %}
+
+<section id="hero">
+    <div class="hero-container">
+        <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <ol class="carousel-indicators" id="hero-carousel-indicators"></ol>
+
+            <div class="carousel-inner" role="listbox">
+
+                <!-- Slide 1 -->
+                <div class="carousel-item active"
+                     style="background-image: url({% static "assets/img/background/photo-1.jpg" %});">
+                    <div class="carousel-container">
+                        <div class="carousel-content">
+                            <h2 class="animate__animated animate__fadeInDown"><span class="c23">Садиба «Леонтія»</span></h2>
+                            <p class="animate__animated animate__fadeInUp"></p>
+                            <div class="d-flex flex-column align-items-stretch">
+
+                                <div class="content my-about">
+                                    <h3>{{ about.title }}</h3>
+                                    <p class="fst-italic">
+                                        {{ about.sup_desc }}
+                                    </p>
+                                    <ul>
+                                        <li><i class="bx bx-check-double"></i> <span>{{ about.point_text_1 }}</span>
+                                        </li>
+                                        <li><i class="bx bx-check-double"></i> <span>{{ about.point_text_2 }}</span>
+                                        </li>
+                                        <li><i class="bx bx-check-double"></i> <span>{{ about.point_text_3 }}</span>
+                                        </li>
+                                        {% if about.check_double_text_4 %}
+                                            <li><i class="bx bx-check-double"></i><span>{{ about.point_text_4 }}</span>
+                                            </li>
+                                        {% endif %}
+                                        {% if about.check_double_text_5 %}
+                                            <li><i class="bx bx-check-double"></i><span>{{ about.point_text_5 }}</span>
+                                            </li>
+                                        {% endif %}
+                                    </ul>
+                                <div class="welcome">
+                                    <p>
+                                        {{ about.inf_desc }}
+                                    </p>
+                                </div>
+                                </div>
+                            </div>
+                            <div class="my-button">
+                                <a href="{% url "main_page:room_selection" %}"
+                                   class="btn-book animate__animated animate__fadeInUp scrollto">Переглянути номери</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,80 @@
+{% extends "basis_rooms.html" %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static "vendor/css/room_details.css" %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="wrap">
+        <div class="container-fluid my-slider">
+            <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+
+                    {% for item in room_photos %}
+                        {% if forloop.first %}
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="{{ forloop.counter0 }}" class="active"
+                                    aria-current="true" aria-label="Slide {{ forloop.counter }}"></button>
+                        {% else %}
+                            <button type="button" data-bs-target="#carouselExampleIndicators"
+                                    data-bs-slide-to="{{ forloop.counter0 }}"
+                                    aria-label="Slide {{ forloop.counter }}"></button>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                <div class="carousel-inner">
+                    {% for item in room_photos %}
+                        {% if forloop.first %}
+                            <div class="carousel-item active">
+                                <img src="{{ item.photo.url }}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h5>{{ item.rooms_id }} {{ item.title }}</h5>
+                                    <p>{{ item.desc }}</p>
+                                </div>
+                            </div>
+                        {% else %}
+                            <div class="carousel-item">
+                                <img src="{{ item.photo.url }}" class="d-block w-100" alt="...">
+                                <div class="carousel-caption d-none d-sm-block">
+                                    <h5>{{ item.rooms_id }} {{ item.title }}</h5>
+                                    <p>{{ item.desc }}</p>
+                                </div>
+
+                            </div>
+                        {% endif %}
+
+                    {% endfor %}
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                        data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <div class="desc-and-button">
+            <div class="heading-text">
+                <h2>
+                    {{ room.title }}
+                </h2>
+                <p>
+                    {{ room.desc }}
+                </p>
+            </div>
+            <div class="card-footer text-center">
+                <a class="btn btn-outline-success"
+                   href="{% url "main_page:reservation" room.id %}">
+                    Забронювати
+                </a>
+            </div>
+        </div>
+    </div>
+{% endblock %}
