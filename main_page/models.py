@@ -70,7 +70,7 @@ class RoomPhoto(models.Model):
         ordering = ("room", "position")
 
 
-class Gallery(models.Model):
+class Gallery(models.Model): #hello
     title_site = models.TextField(max_length=80, blank=True)
     subtitle_site = models.TextField(max_length=250, blank=True)
     photo = models.ImageField(upload_to="gallery", blank=False)
