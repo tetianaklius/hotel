@@ -20,13 +20,13 @@ class UserLoginForm(AuthenticationForm):
 
 class UserRegistrationForm(UserCreationForm):
     first_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': "Введіть ім'я"}))
+        'class': 'form-control py-4', 'placeholder': "Введіть ім'я"}), required=False)
     last_name = forms.CharField(widget=forms.TextInput(attrs={
-        'class': 'form-control py-4', 'placeholder': "Введіть прізвище"}))
+        'class': 'form-control py-4', 'placeholder': "Введіть прізвище"}), required=False)
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control py-4', 'placeholder': "Введіть ім'я для входу"}))
     email = forms.CharField(widget=forms.EmailInput(attrs={
-        'class': 'form-control py-4', 'placeholder': "Введіть адресу електронної скриньки"}))
+        'class': 'form-control py-4', 'placeholder': "Введіть адресу електронної скриньки"}), required=False)
     # phone = forms.CharField(max_length=20, widget=forms.TextInput(attrs={
     #     "type": "text",
     #     "class": "form-control",

@@ -8,7 +8,7 @@ from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, Cate
 
 
 def category_coefficient(category_id):
-    category = CategoryRoom.objects.filter(id=category_id)
+    category = CategoryRoom.objects.get(id=category_id)
     return category.category_coefficient
 
 
@@ -29,16 +29,16 @@ def room_selection(request, category_persons=None):
     if category_persons:
         if category_persons==1:
             rooms_show = Room.objects.filter(is_visible=True, for_single=True)
-            for item in rooms_show:
+            for item in list(rooms_show):
                 if item.category.price_modification:
                     coefficient = category_coefficient(item.category.id)
-                    item.price = item.price * coefficient
+                    item.price *= coefficient
         elif category_persons == 10:
             rooms_show = Room.objects.filter(is_visible=True, with_pets=True)
             for item in rooms_show:
                 if item.category.price_modification:
                     coefficient = category_coefficient(item.category.id)
-                    item.price = item.price * coefficient
+                    item.price *= coefficient
         else:
             rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
     else:
