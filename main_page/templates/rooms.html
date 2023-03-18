@@ -13,7 +13,7 @@
 
             <div class="col-lg-3">
 
-                <h1 class="my-4">Номери</h1>
+                <h2 class="my-4">Номери</h2>
                 <div class="list-group">
                     {% for category in room_category %}
                         <a href="{% url "main_page:category" category.persons %}" class="list-group-item">
@@ -39,6 +39,7 @@
                                         <a>{{ room.title }}</a>
                                     </h4>
                                     <h5 style="text-align: right">{{ room.price }} UAH</h5>
+                                    <h7 style="font-size: small; display: flex">{{ room.price_comment }}</h7>
                                 </div>
                                 <div class="card-footer text-center">
                                     <a class="btn btn-outline-success"

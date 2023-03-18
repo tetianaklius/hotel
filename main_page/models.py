@@ -3,15 +3,14 @@ import uuid
 
 from django.core.validators import RegexValidator
 from django.db import models
+from django.shortcuts import get_object_or_404
 
 
 class CategoryRoom(models.Model):
     title = models.CharField(max_length=100, unique=True, db_index=True)
     position = models.SmallIntegerField(unique=True)
     is_visible = models.BooleanField(default=True)
-    price_modification = models.BooleanField(default=False)
     persons = models.SmallIntegerField(default=1)
-    category_coefficient = models.DecimalField(decimal_places=3, max_digits=5)
 
     def __str__(self):
         return f'{self.title}'
@@ -29,7 +28,14 @@ class Room(models.Model):
     desc = models.TextField(max_length=3000, blank=True)
     position = models.SmallIntegerField(unique=True)
     is_visible = models.BooleanField(default=True)
+    persons = models.SmallIntegerField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
+    price_comment = models.TextField(max_length=100, blank=True)
+    price_1person = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price_2person = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price_3person = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    price_pets = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+
     special_offer = models.BooleanField(default=False)
     category = models.ForeignKey(CategoryRoom, on_delete=models.CASCADE, related_name="rooms")
     title_photo = models.ImageField(upload_to="title_photo", blank=False)
@@ -38,17 +44,12 @@ class Room(models.Model):
     for_single = models.BooleanField(default=False)
     with_pets = models.BooleanField(default=False)
     first_floor = models.BooleanField(default=False)
-    persons = models.SmallIntegerField()
 
     def __str__(self):
         return f"{self.inn_number} | {self.title}"
 
     class Meta:
         ordering = ('position',)
-
-    # def __iter__(self):
-    #     for item in self.photos.all():
-    #         yield item
 
 
 class RoomPhoto(models.Model):
@@ -60,7 +61,7 @@ class RoomPhoto(models.Model):
 
     photo = models.ImageField(upload_to=get_file_name, blank=False)
     position = models.SmallIntegerField(unique=True)
-    room = models.ForeignKey(Room, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room_photo")
     desc = models.TextField(max_length=250, blank=True)
 
     def __str__(self):
@@ -70,13 +71,14 @@ class RoomPhoto(models.Model):
         ordering = ("room", "position")
 
 
-class Gallery(models.Model): #hello
+class Gallery(models.Model):
     title_site = models.TextField(max_length=80, blank=True)
     subtitle_site = models.TextField(max_length=250, blank=True)
     photo = models.ImageField(upload_to="gallery", blank=False)
     desc = models.TextField(max_length=250, blank=True)
     inn_short_desc = models.CharField(max_length=30, blank=False)
     season = models.SmallIntegerField()
+    is_visible = models.BooleanField(default=True)
 
     def __str__(self):
         return f"{self.inn_short_desc}"
@@ -128,7 +130,7 @@ class Contacts(models.Model):
 
 
 class Reservation(models.Model):
-    phone_validator = RegexValidator(regex=r"^\+?3?8?0\d{2}[- ]?(\d[- ]?){7}$", message="Error in phone number")
+    phone_validator = RegexValidator(regex=r"^\+?3?8?0\d{2}[- ]?(\d[- ]?){7}$", message="Помилка в номері телефону")
 
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, blank=True)
@@ -145,5 +147,3 @@ class Reservation(models.Model):
 
     class Meta:
         ordering = ("-date", )
-
-

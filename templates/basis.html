@@ -65,7 +65,7 @@
                 <li><a class="nav-link scrollto" href="{% url "main_page:main_path" %}#gallery">Світлини</a></li>
                 <li><a class="nav-link scrollto" href="{% url "main_page:main_path" %}#contacts">Контакти</a></li>
                 {% if "manager" in user.groups.all.0.name %}
-                    <li class="dropdown"><a href="#"><span>Manager</span> <i class="bi bi-chevron-down"></i></a>
+                    <li class="dropdown"><a href="#"><span>Менеджер(ка)</span> <i class="bi bi-chevron-down"></i></a>
                         <ul>
                             <li><a href="{% url "main_page:list_reservations" %}">Запити</a></li>
                         </ul>
@@ -76,13 +76,13 @@
                         {% if user.username %}
                         <ul>
                             <li><a href="{% url "account:profile" %}">Переглянути профіль</a></li>
-                            <li><a href="{% url "account:logout_view" %}">Вийти | Logout</a></li>
+                            <li><a href="{% url "account:logout_view" %}">Вийти</a></li>
                         </ul>
                     </li>
                         {% else %}
                         <ul>
-                            <li><a href="{% url "account:login_view" %}">Увійти | Login</a></li>
-                            <li><a href="{% url "account:registration_view" %}">Зареєструватись | Registration</a></li>
+                            <li><a href="{% url "account:login_view" %}">Увійти</a></li>
+                            <li><a href="{% url "account:registration_view" %}">Зареєструватись</a></li>
                         </ul>
                         {% endif %}
                         </ul>

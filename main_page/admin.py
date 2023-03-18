@@ -3,11 +3,16 @@ from django.contrib import admin
 from .models import Room, RoomPhoto, Gallery, About, Contacts, CategoryRoom, Reservation
 
 
+class RoomPhotoAdmin(admin.TabularInline):
+    model = RoomPhoto
+    raw_id_fields = ["room"]
+
+
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
     model = Room
-    # inlines = [AdminRoomPhoto]
-    list_display = ["title", "inn_number", "position", "is_visible", "price", "special_offer"]
+    inlines = [RoomPhotoAdmin]
+    list_display = ["inn_number", "title", "position", "is_visible", "price", "special_offer"]
     list_editable = ["position", "is_visible", "price", "special_offer"]
     list_filter = ["is_visible", "special_offer", "category", "for_single", "with_pets", "first_floor"]
 
@@ -20,9 +25,28 @@ class AdminAllRoomPhoto(admin.ModelAdmin):
     list_editable = ["position"]
 
 
-admin.site.register(Gallery)
+@admin.register(Gallery)
+class AdminGallery(admin.ModelAdmin):
+    model = Gallery
+    list_filter = ["season", "is_visible"]
+    list_display = ["inn_short_desc", "season", "is_visible"]
+    list_editable = ["is_visible"]
+
+
 admin.site.register(About)
 admin.site.register(Contacts)
-admin.site.register(CategoryRoom)
 
-admin.site.register(Reservation)
+
+@admin.register(CategoryRoom)
+class CategoryRoomAdmin(admin.ModelAdmin):
+    model = CategoryRoom
+    list_display = ["title", "is_visible"]
+    list_filter = ["is_visible"]
+
+
+@admin.register(Reservation)
+class AdminReservation(admin.ModelAdmin):
+    model = Reservation
+    list_display = ["name", "phone", "persons", "is_processed"]
+    list_filter = ["persons", "is_processed", "date"]
+
