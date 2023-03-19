@@ -1,0 +1,28 @@
+{% extends "basis_rooms.html" %}
+{% load static %}
+
+{% block css %}
+    <link href="{% static 'vendor/css/profile.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-7">
+                <h2 class="mt-3 mb-3">Запити</h2>
+                {% for item in reservations %}
+                <div class="row">
+                        <div class="col-md-3">
+                            <a href="{% url "main_page:update_reservation" pk=item.pk %}">
+                                <button type="button" class="btn btn-primary">Опрацьовано</button>
+                            </a>
+                        </div>
+                        <div class="col-md-3"><b>{{ item.name }}</b> {{ item.last_name }}</div>
+                        <div class="col-md-3">{{ item.phone }}</div>
+                        <div class="col-md-3">осіб: <b>{{ item.persons }}</b>; {{ roo }}<i>"{{ item.message }}"</i></div>
+                        <div style="font-size: small">{{ item.date|date:"d-m-Y" }}</div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+{% endblock %}
