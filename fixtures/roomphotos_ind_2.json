@@ -948,5 +948,75 @@
     "room": 19,
     "desc": ""
   }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 112,
+  "fields": {
+    "photo": "room_photo/030d4eb2-bd09-4dcb-bfc8-c8629355de33.jpg",
+    "position": 150,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 113,
+  "fields": {
+    "photo": "room_photo/b1118a28-3f96-4d5d-b4ba-5412bf742bc0.jpg",
+    "position": 151,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 114,
+  "fields": {
+    "photo": "room_photo/3b99a401-0415-442f-87ab-e094d96fa4d5.jpg",
+    "position": 152,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 115,
+  "fields": {
+    "photo": "room_photo/f737eea3-1bcf-46eb-8912-13c959c92723.jpg",
+    "position": 153,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 116,
+  "fields": {
+    "photo": "room_photo/feac5b81-1a64-48f5-8b47-727e6016e415.jpg",
+    "position": 154,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 117,
+  "fields": {
+    "photo": "room_photo/5ad9a132-ba13-4813-bd96-4d6b5b67cb4e.jpg",
+    "position": 155,
+    "room": 20,
+    "desc": ""
+  }
+},
+{
+  "model": "main_page.roomphoto",
+  "pk": 118,
+  "fields": {
+    "photo": "room_photo/a5e71312-daa4-4ca5-a3e7-d14b2c315742.jpg",
+    "position": 156,
+    "room": 20,
+    "desc": ""
+  }
 }
 ]

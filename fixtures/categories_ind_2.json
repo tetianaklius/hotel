@@ -6,9 +6,7 @@
     "title": "Для двох",
     "position": 2,
     "is_visible": true,
-    "price_modification": false,
-    "persons": 2,
-    "category_coefficient": "1.000"
+    "persons": 2
   }
 },
 {
@@ -18,21 +16,7 @@
     "title": "Для трьох",
     "position": 3,
     "is_visible": true,
-    "price_modification": false,
-    "persons": 3,
-    "category_coefficient": "1.000"
-  }
-},
-{
-  "model": "main_page.categoryroom",
-  "pk": 3,
-  "fields": {
-    "title": "Для чотирьох",
-    "position": 4,
-    "is_visible": true,
-    "price_modification": false,
-    "persons": 4,
-    "category_coefficient": "1.000"
+    "persons": 3
   }
 },
 {
@@ -42,9 +26,7 @@
     "title": "З домашніми улюбленцями",
     "position": 5,
     "is_visible": true,
-    "price_modification": true,
-    "persons": 10,
-    "category_coefficient": "1.300"
+    "persons": 10
   }
 },
 {
@@ -54,9 +36,17 @@
     "title": "Для однієї особи",
     "position": 1,
     "is_visible": true,
-    "price_modification": true,
-    "persons": 1,
-    "category_coefficient": "0.700"
+    "persons": 1
+  }
+},
+{
+  "model": "main_page.categoryroom",
+  "pk": 6,
+  "fields": {
+    "title": "Для чотирьох",
+    "position": 4,
+    "is_visible": true,
+    "persons": 4
   }
 }
 ]

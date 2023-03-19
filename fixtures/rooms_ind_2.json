@@ -4,18 +4,23 @@
   "pk": 7,
   "fields": {
     "title": "Номер в окремому будиночку, 2 поверх",
-    "desc": "Суперзатишний та комфортний номер в окремому невеликому будиночку.\r\nВ основній кімнаті розташоване двоспальне ліжко, стіл, телевізор, настільна лампа, просторі полиці-ніші, шафа, обігрівач-конвектор.\r\nДруга кімната -- світла та простора лоджія, що дає змогу побути наодинці з природою. У будь-яку пору року там чудово можна відпочити та помилуватись краєвидом: послухати спів пташок, помріяти серед засніжених гілок дерев, погрітись у промінцях сонця.\r\nНа лоджії є розкладний диван, стіл зі стільцями, зручна маленька кухня з необхідним начинням, шафа, обігрівач-конвектор.\r\nУ номері також є ванна кімната, передпокій із великою тумбою. Вхід у номер зі зовнішніх сходів.",
+    "desc": "Суперзатишний та комфортний номер в окремому невеликому будиночку.\r\nВ основній кімнаті розташоване двоспальне ліжко, стіл, телевізор, настільна лампа, просторі місткі полиці-ніші, шафа, обігрівач.\r\nДруга кімната — світла та простора лоджія, що дає змогу побути наодинці з природою. У будь-яку пору року там можна відпочити та помилуватись краєвидом: помріяти серед засніжених гілок дерев взимку, послухати спів пташок навесні, послухати цвіркунів влітку та погрітись у промінцях сонця восени.\r\nНа лоджії є розкладний диван, стіл зі стільцями, зручна компактна кухня з необхідним начинням, шафа, обігрівач.\r\nУ номері також є ванна кімната, передпокій із великою тумбою. Вхід у номер зі зовнішніх окремих сходів.",
     "position": 1,
     "is_visible": true,
+    "persons": 3,
     "price": "900.00",
-    "special_offer": false,
+    "price_comment": "",
+    "price_1person": "700.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
+    "special_offer": true,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_125822.jpg",
     "inn_number": 25,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 3
+    "first_floor": false
   }
 },
 {
@@ -23,18 +28,23 @@
   "pk": 8,
   "fields": {
     "title": "Номер в окремому будиночку, 1 поверх",
-    "desc": "Затишний просторий номер в окремому невеликому будиночку.\r\nВ основній кімнаті: двоспальне ліжко, шафа, тумба, полиці-ніші, телевізор, обігрівач-конвектор.\r\nНа світлій та затишній лоджії розташована зона відпочинку (диван, стіл зі стільцями) з настінним обігрівачем, а також компактна кухня з необхідним начинням. \r\nТакож є ванна кімната та передпокій із шафами-купе з великими дзеркалами.\r\nВхід у номер окремий, із подвір'я.",
+    "desc": "Затишний просторий номер в окремому невеликому будиночку.\r\nВ основній кімнаті: двоспальне ліжко, шафа, тумба, місткі полиці-ніші, телевізор, обігрівач.\r\nУ світлій та затишній лоджії розташована зона відпочинку (диван, стіл зі стільцями) з настінним обігрівачем, а також компактна кухня з необхідним начинням. \r\nТакож у номері є ванна кімната та передпокій із шафою-купе з великими дзеркалами.\r\nВхід у номер окремий, із подвір'я.",
     "position": 2,
     "is_visible": true,
+    "persons": 3,
     "price": "800.00",
+    "price_comment": "",
+    "price_1person": "600.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": "1100.00",
     "special_offer": false,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_131441.jpg",
     "inn_number": 12,
     "for_single": true,
     "with_pets": true,
-    "first_floor": true,
-    "persons": 3
+    "first_floor": true
   }
 },
 {
@@ -42,18 +52,23 @@
   "pk": 9,
   "fields": {
     "title": "Тримісний двокімнатний номер 1",
-    "desc": "опис 5 номер",
+    "desc": "Номер має дві основні кімнати, а також ванну кімнату, передпокій та кухню.\r\nВ основній кімнаті: двоспальне ліжко, тумби з шухлядами, настільна лампа, телевізор.\r\nУ другій кімнаті є розкладний диван, стіл зі стільцями, шафа, тумби. Тут є сполучення з кухнею. Кухня та ванна мають все необхідне базове начиння. У передпокої також є містка шафа з полицями та шухлядами.\r\nВхід у номер із загального зовнішнього балкона.",
     "position": 9,
     "is_visible": true,
+    "persons": 3,
     "price": "750.00",
+    "price_comment": "",
+    "price_1person": "650.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_134248.jpg",
     "inn_number": 5,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 3
+    "first_floor": false
   }
 },
 {
@@ -61,18 +76,23 @@
   "pk": 10,
   "fields": {
     "title": "Тримісний двокімнатний номер 2",
-    "desc": "",
+    "desc": "Номер має дві основні кімнати, а також ванну кімнату, передпокій та кухню.\r\nВ основній кімнаті: ліжко з приліжковими тумбами, стіл, настільна лампа, шафа, телевізор.\r\nУ другій кімнаті є розкладний диван, стіл зі стільцями, шафа. Звідси є вхід на кухню. Кухня та ванна мають все необхідне базове начиння.\r\nВхід у номер із загального зовнішнього балкона.",
     "position": 6,
     "is_visible": true,
+    "persons": 3,
     "price": "700.00",
+    "price_comment": "",
+    "price_1person": "550.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_135457.jpg",
     "inn_number": 6,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 3
+    "first_floor": false
   }
 },
 {
@@ -80,18 +100,23 @@
   "pk": 11,
   "fields": {
     "title": "Двомісний номер, 2 поверх, східна сторона",
-    "desc": "Комфортний 2-місний номер із затишною лоджією-кухнею. Вікно розташоване на схід.\r\nВанна кімната та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
+    "desc": "Комфортний 2-місний номер із затишною кухнею на лоджії. Вікно на схід.\r\nУ номері є ванна кімната та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
     "position": 3,
     "is_visible": true,
+    "persons": 2,
     "price": "750.00",
+    "price_comment": "",
+    "price_1person": "600.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_141411.jpg",
     "inn_number": 7,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -99,18 +124,23 @@
   "pk": 13,
   "fields": {
     "title": "Затишний 2-місний номер із лоджією",
-    "desc": "Затишний 2-місний номер із лоджією та краєвидом на пагорб із лісом та дерев'яний будиночок. \r\nВ основній кімнаті є двоспальне ліжко з приліжковими тумбами, стіл зі стільцем, настільна лампа, телевізор.\r\nНа лоджії розташована компактна кухня з необхідним начинням та зона відпочинку. Великі вікна забезпечують багато денного світла та простору.\r\nТакож у номері зручна ванна кімната з теплою підлогою та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
+    "desc": "Затишний 2-місний номер із краєвидом на лісовий пагорб та дерев'яний будиночок. \r\nВ основній кімнаті є двоспальне ліжко з приліжковими тумбами, стіл зі стільцем, настільна лампа, телевізор.\r\nНа лоджії розташована компактна кухня з необхідним начинням та зона відпочинку. Великі вікна забезпечують багато денного світла та простору.\r\nТакож у номері зручна ванна кімната з теплою підлогою та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
     "position": 4,
     "is_visible": true,
+    "persons": 2,
     "price": "850.00",
+    "price_comment": "",
+    "price_1person": "700.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_140732.jpg",
     "inn_number": 10,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -118,18 +148,23 @@
   "pk": 14,
   "fields": {
     "title": "Двомісний напівлюкс із кухнею-лоджією",
-    "desc": "Двомісний напівлюкс із кухнею-лоджією",
+    "desc": "Комфортний двомісний напівлюкс із кухнею-лоджією саме для вас, якщо ви любите спостерігати за всім, що відбувається навколо. Із вікон лоджії видно все подвір'я садиби, лісовий пагорб поруч та обриси навколишніх гір.\r\nВ номері є ванна кімната, передпокій із великою шафою. На лоджії розміщена компактна кухня та зона відпочинку для ранкового кавування та чаювання. Детальніше на фото.",
     "position": 5,
     "is_visible": true,
+    "persons": 2,
     "price": "900.00",
+    "price_comment": "",
+    "price_1person": "750.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_141941.jpg",
     "inn_number": 11,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -140,15 +175,20 @@
     "desc": "",
     "position": 10,
     "is_visible": true,
+    "persons": 2,
     "price": "700.00",
+    "price_comment": "",
+    "price_1person": "500.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_143049_a8hjhg6.jpg",
     "inn_number": 8,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -159,15 +199,20 @@
     "desc": "",
     "position": 14,
     "is_visible": true,
+    "persons": 3,
     "price": "650.00",
+    "price_comment": "",
+    "price_1person": "500.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 2,
     "title_photo": "title_photo/IMG_20230305_132532.jpg",
     "inn_number": 14,
     "for_single": true,
     "with_pets": false,
-    "first_floor": true,
-    "persons": 3
+    "first_floor": true
   }
 },
 {
@@ -175,18 +220,23 @@
   "pk": 17,
   "fields": {
     "title": "Двомісний номер із панорамним вікном на 3 поверсі",
-    "desc": "",
+    "desc": "Номер розташований на 3 поверсі. Звідси відкривається чудовий краєвид на лісовий пагорб та навколишні гірські хребти, а також на саме подвір'я садиби.\r\nЯкщо вам до вподоби панорамні вікна та простір, то цей номер припаде до душі.\r\nВ основній кімнаті міститься ліжко, тумба з шухлядами, телевізор на стіні.\r\nНа лоджії — компактна затишна кухня та зона відпочинку з обігрівачем.\r\nУ номері також є ванна кімната та передпокій із великою шафою.\r\nВхід у номер із загального коридору будинку.",
     "position": 7,
     "is_visible": true,
+    "persons": 2,
     "price": "800.00",
+    "price_comment": "",
+    "price_1person": "650.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_145203.jpg",
     "inn_number": 21,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -197,15 +247,20 @@
     "desc": "",
     "position": 23,
     "is_visible": true,
+    "persons": 2,
     "price": "650.00",
+    "price_comment": "",
+    "price_1person": "500.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_143914.jpg",
     "inn_number": 23,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
   }
 },
 {
@@ -216,15 +271,44 @@
     "desc": "",
     "position": 24,
     "is_visible": true,
+    "persons": 2,
     "price": "700.00",
+    "price_comment": "",
+    "price_1person": "550.00",
+    "price_2person": null,
+    "price_3person": null,
+    "price_pets": null,
     "special_offer": false,
     "category": 1,
     "title_photo": "title_photo/IMG_20230305_144503.jpg",
     "inn_number": 24,
     "for_single": true,
     "with_pets": false,
-    "first_floor": false,
-    "persons": 2
+    "first_floor": false
+  }
+},
+{
+  "model": "main_page.room",
+  "pk": 20,
+  "fields": {
+    "title": "4-місний номер з окремими ліжками",
+    "desc": "",
+    "position": 15,
+    "is_visible": true,
+    "persons": 4,
+    "price": "850.00",
+    "price_comment": "",
+    "price_1person": "450.00",
+    "price_2person": "600.00",
+    "price_3person": "750.00",
+    "price_pets": null,
+    "special_offer": false,
+    "category": 6,
+    "title_photo": "title_photo/IMG_20230305_133635.jpg",
+    "inn_number": 15,
+    "for_single": true,
+    "with_pets": false,
+    "first_floor": true
   }
 }
 ]
