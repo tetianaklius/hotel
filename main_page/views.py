@@ -86,6 +86,7 @@ def reservation(request, room_id):
         room_price = Room.objects.get(id=room_id).price
         persons = Room.objects.get(id=room_id).category.persons
 
+        """якщо usera нема і звернутися до його полів, буде errror тому так зробив"""
         name = user.first_name if user.is_authenticated else None
         last_name = user.last_name if user.is_authenticated else None
         user_id = request.user.id if user.is_authenticated else None
