@@ -22,28 +22,28 @@ def main(request):
 
 def room_selection(request, category_persons=None):
     if category_persons:
-        if category_persons==1:
+        if category_persons == 1:
             rooms_show = Room.objects.filter(is_visible=True, for_single=True)
             for item in rooms_show:
                 if item.price_1person:
                     item.price = item.price_1person
                     item.price_comment = "(ціна за номер для проживання 1 особи)"
 
-        elif category_persons==2:
+        elif category_persons == 2:
             rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
             for item in rooms_show:
                 if item.price_2person:
                     item.price = item.price_2person
                     item.price_comment = "(ціна за номер для проживання 2-х осіб)"
 
-        elif category_persons==3:
+        elif category_persons == 3:
             rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
             for item in rooms_show:
                 if item.price_3person:
                     item.price = item.price_3person
                     item.price_comment = "(ціна за номер для проживання 3-х осіб)"
 
-        elif category_persons==4:
+        elif category_persons == 4:
             rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
 
         elif category_persons == 10:
@@ -72,54 +72,41 @@ def room_details(request, room_id: int):
 
 
 def reservation(request, room_id):
-    if request.user.is_authenticated:
-        form = RoomReservationForm(initial={
-            "name": request.user.first_name,
-            "last_name": request.user.last_name,
-            "room_id": room_id,
-            "room_price": Room.objects.get(id=room_id).price,
-            "persons": Room.objects.get(id=room_id).category.persons,
-            "user_id": request.user.id,
-            "user_email": request.user.email,
-        })
-    else:
-        form = RoomReservationForm()
-        form.room_id = room_id
+    """якщо POST , витягуємо всі дані з нього і пхаємо в data instans форми"""
+    user = request.user
 
-    if form.is_valid():
-        form.room_price = Room.objects.get(id=room_id).price
-        form.user_id = request.user.id
-        form.room_id = room_id
-        form.save()
-        return HttpResponseRedirect(reverse("main_page:main_path"))
+    if request.method == "POST":
+        form = RoomReservationForm(data=request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponseRedirect(reverse("main_page:main_path"))
+
+    else:
+        """ а якщо GET - то напихаємо initial значення форми - тобто заповняємо по дефолту"""
+        room_price = Room.objects.get(id=room_id).price
+        persons = Room.objects.get(id=room_id).category.persons
+
+        name = user.first_name if user.is_authenticated else None
+        last_name = user.last_name if user.is_authenticated else None
+        user_id = request.user.id if user.is_authenticated else None
+        user_email = request.user.email if user.is_authenticated else None
+
+        form = RoomReservationForm(initial={
+            'room_id': room_id,
+            'room_price': room_price,
+            'persons': persons,
+            'name': name,
+            'last_name': last_name,
+            'user_id': user_id,
+            'user_email': user_email,
+        })
 
     room = Room.objects.get(id=room_id)
-    room_price = room.price
 
     return render(request, "reservation.html", context={
         "form": form,
         "room": room,
-        "room_price": room_price,
-        "room_id": room_id,
-        "user_id": request.user.id or 2,
     })
-
-
-# def reservation(request, room_id):
-#     if request.method == "POST":
-#         form = RoomReservationForm(request.POST)
-#         form.room_id = room_id
-#         if form.is_valid():
-#             form.save()
-#             return HttpResponseRedirect(reverse("main_page:main_path"))
-#     else:
-#         form = RoomReservationForm()
-#         form.room_id = room_id
-#         room = Room.objects.get(id=room_id)
-#         return render(request, "reservation.html", context={
-#             "form": form,
-#             "room": room,
-#         })
 
 
 def filter_(request, category_id):
@@ -142,5 +129,5 @@ def list_reservations(request):
         room = Room.objects.get(id=item.room_id)
         room_price = room.price
 
-    return render(request, "list_reservations.html", context={"reservations": messages, "room": room, "room_price": room_price, })
-
+    return render(request, "list_reservations.html",
+                  context={"reservations": messages, "room": room, "room_price": room_price, })

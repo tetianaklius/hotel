@@ -1,0 +1,25 @@
+<div class="card mb-3">
+    <div class="card-wrap">
+        <div class="card-body">
+            <h5 class="card-title">{{ room.title }}</h5>
+            <p class="card-text">{{ room.desc }}</p>
+        </div>
+        <div class="card-image">
+            <img class="card-img-top"
+                 src="{{ room.title_photo.url }}"
+                 alt="Світлина номера">
+        </div>
+    </div>
+    <ul class="list-group list-group-flush">
+        <li class="list-group-item bg-light">
+            <div class="row text-left">
+                <div class="col-lg-4">{{ room.price }} грн.</div>
+            </div>
+            <div class="row mt-2 justify-content-around">
+
+            </div>
+        </li>
+    </ul>
+</div>
+
+

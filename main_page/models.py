@@ -135,12 +135,12 @@ class Reservation(models.Model):
     name = models.CharField(max_length=50)
     last_name = models.CharField(max_length=50, blank=True)
     phone = models.CharField(max_length=20, validators=[phone_validator])
-    persons = models.IntegerField(blank=True, default=2)
+    persons = models.IntegerField(null=True, blank=True, default=2)
     message = models.TextField(max_length=250, blank=True)
 
-    room_id = models.IntegerField()
-    room_price = models.DecimalField(max_digits=6, decimal_places=2, default=1)
-    user_id = models.IntegerField(default=2, blank=True)
+    room_id = models.IntegerField(null=True, blank=True)
+    room_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+    user_id = models.IntegerField(null=True, blank=True)
     # user_email = models.CharField(max_length=100, blank=True)
 
     date = models.DateField(auto_now_add=True)
@@ -151,4 +151,4 @@ class Reservation(models.Model):
         return f"{self.name}: {self.phone}"
 
     class Meta:
-        ordering = ("-date", )
+        ordering = ("-date",)
