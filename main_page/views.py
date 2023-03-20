@@ -72,17 +72,54 @@ def room_details(request, room_id: int):
 
 
 def reservation(request, room_id):
-    if request.method == "POST":
-        form = RoomReservationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return HttpResponseRedirect(reverse("main_page:main_path"))
+    if request.user.is_authenticated:
+        form = RoomReservationForm(initial={
+            "name": request.user.first_name,
+            "last_name": request.user.last_name,
+            "room_id": room_id,
+            "room_price": Room.objects.get(id=room_id).price,
+            "persons": Room.objects.get(id=room_id).category.persons,
+            "user_id": request.user.id,
+            "user_email": request.user.email,
+        })
     else:
         form = RoomReservationForm()
+        form.room_id = room_id
+
+    if form.is_valid():
+        form.room_price = Room.objects.get(id=room_id).price
+        form.user_id = request.user.id
+        form.room_id = room_id
+        form.save()
+        return HttpResponseRedirect(reverse("main_page:main_path"))
+
+    room = Room.objects.get(id=room_id)
+    room_price = room.price
+
     return render(request, "reservation.html", context={
-            "form": form,
-            "room_id": room_id,
-        })
+        "form": form,
+        "room": room,
+        "room_price": room_price,
+        "room_id": room_id,
+        "user_id": request.user.id or 2,
+    })
+
+
+# def reservation(request, room_id):
+#     if request.method == "POST":
+#         form = RoomReservationForm(request.POST)
+#         form.room_id = room_id
+#         if form.is_valid():
+#             form.save()
+#             return HttpResponseRedirect(reverse("main_page:main_path"))
+#     else:
+#         form = RoomReservationForm()
+#         form.room_id = room_id
+#         room = Room.objects.get(id=room_id)
+#         return render(request, "reservation.html", context={
+#             "form": form,
+#             "room": room,
+#         })
 
 
 def filter_(request, category_id):
@@ -101,5 +138,9 @@ def update_reservation(request, pk):
 @user_passes_test(is_manager)
 def list_reservations(request):
     messages = Reservation.objects.filter(is_processed=False)
-    return render(request, "list_reservations.html", context={"reservations": messages, })
+    for item in messages:
+        room = Room.objects.get(id=item.room_id)
+        room_price = room.price
+
+    return render(request, "list_reservations.html", context={"reservations": messages, "room": room, "room_price": room_price, })
 

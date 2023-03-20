@@ -22,9 +22,13 @@ class RoomReservationForm(forms.ModelForm):
         "rows": "5",
         "placeholder": "Наприклад, коли Вам зручніше, щоб ми зателефонували тощо",
     }))
+    room_id = forms.IntegerField(widget=forms.IntegerField, disabled=True)
+    room_price = forms.DecimalField(max_digits=6, decimal_places=2, disabled=True)
+    user_id = forms.IntegerField(required=False, disabled=True)
+    # user_email = forms.CharField(widget=forms.CharField)
 
     class Meta:
         model = Reservation
-        fields = ["name", "last_name", "phone", "message", "persons"]
+        fields = ["name", "last_name", "phone", "message", "persons", "room_id", "room_price", "user_id"]
 
 

@@ -138,6 +138,11 @@ class Reservation(models.Model):
     persons = models.IntegerField(blank=True, default=2)
     message = models.TextField(max_length=250, blank=True)
 
+    room_id = models.IntegerField()
+    room_price = models.DecimalField(max_digits=6, decimal_places=2, default=1)
+    user_id = models.IntegerField(default=2, blank=True)
+    # user_email = models.CharField(max_length=100, blank=True)
+
     date = models.DateField(auto_now_add=True)
     date_processing = models.DateField(auto_now=True)
     is_processed = models.BooleanField(default=False)

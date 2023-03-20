@@ -11,8 +11,8 @@ urlpatterns = [
     path("rooms/", room_selection, name="room_selection"),
     path("rooms/category/<int:category_persons>/", room_selection, name="category"),
 
-    path("rooms/room/<int:room_id>/", room_details, name="room_details"),
     path("rooms/room/reservation/<int:room_id>/", reservation, name="reservation"),
+    path("rooms/room/<int:room_id>/", room_details, name="room_details"),
 
     path("manager/update_reserve/<int:pk>/", update_reservation, name="update_reservation"),
     path("manager/reserve_list/", list_reservations, name="list_reservations"),
