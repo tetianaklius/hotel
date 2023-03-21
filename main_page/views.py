@@ -1,6 +1,8 @@
+from django.contrib import admin
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, redirect
+from django.template.defaulttags import url
 from django.urls import reverse
 
 from main_page.forms import RoomReservationForm
@@ -9,6 +11,10 @@ from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, Cate
 
 def is_manager(user):
     return user.groups.filter(name="manager").exists()
+
+
+def is_admin(user):
+    return user.groups.filter(name="admin").exists()
 
 
 def main(request):
@@ -72,37 +78,27 @@ def room_details(request, room_id: int):
 
 
 def reservation(request, room_id):
-    """якщо POST , витягуємо всі дані з нього і пхаємо в data instans форми"""
     user = request.user
 
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
-            # form.save()
-            """ варіант збереження через інстанс моделі
-            в цьому варіанті можна пхати дані які забажаєш вже в саму модель,
-            хочеш з форми, хочеш з іншої форми, якщо їх декілька, хочеш просто пишеш щось
-            коду більше, але руки не звязані віджетами всякими прихованими, які потрібно пхати у форму
-            думаю цей варіант використовують частіше
-            """
-            reservation_instans = Reservation(
-                name='бабаГася',
-                user_id=2,
+            reservation_instance = Reservation(
+                name=form.cleaned_data["name"],
+                user_id=request.user.id,
                 room_id=form.cleaned_data["room_id"],
                 message=form.cleaned_data["message"],
                 phone=form.cleaned_data["phone"],
-                persons=145,
-
+                persons=form.cleaned_data["persons"],
+                room_price=Room.objects.get(id=room_id).price
             )
-            reservation_instans.save()
+            reservation_instance.save()
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
-        """ а якщо GET - то напихаємо initial значення форми - тобто заповняємо по дефолту"""
         room_price = Room.objects.get(id=room_id).price
         persons = Room.objects.get(id=room_id).category.persons
 
-        """якщо usera нема і звернутися до його полів, буде errror тому так зробив"""
         name = user.first_name if user.is_authenticated else None
         last_name = user.last_name if user.is_authenticated else None
         user_id = request.user.id if user.is_authenticated else None

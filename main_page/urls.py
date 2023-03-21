@@ -1,4 +1,4 @@
-from django.urls import path, include
+from django.urls import path
 from .views import main, update_reservation, list_reservations
 
 from .views import room_selection, reservation, room_details
