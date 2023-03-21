@@ -40,10 +40,10 @@
                                 </div>
                                 <div class="form-row">
                                     <div class="col-md-6">
-                                        <label class="small mb-1" for="{{ form.username.id_for_label }}">
-                                            Лоґін
+                                        <label class="small mb-1" for="{{ form.phone.id_for_label }}">
+                                            Телефон (необов'язково)
                                         </label>
-                                        {{ form.username }}
+                                        {{ form.phone }}
                                     </div>
                                     <div class="col-md-6">
                                         <label class="small mb-1" for="{{ form.email.id_for_label }}">
@@ -52,7 +52,14 @@
                                         {{ form.email }}
                                     </div>
                                 </div>
+                                <hr>
                                 <div class="form-row">
+                                    <div class="col-md-6">
+                                        <label class="small mb-1" for="{{ form.username.id_for_label }}">
+                                            Лоґін
+                                        </label>
+                                        {{ form.username }}
+                                    </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label class="small mb-1" for="{{ form.password1.id_for_label }}">

@@ -26,7 +26,7 @@ class UserRegistrationForm(UserCreationForm):
     username = forms.CharField(widget=forms.TextInput(attrs={
         'class': 'form-control py-4', 'placeholder': "Введіть ім'я для входу"}))
     email = forms.CharField(widget=forms.EmailInput(attrs={
-        'class': 'form-control py-4', 'placeholder': "Введіть адресу електронної скриньки"}), required=False)
+        'class': 'form-control py-4', 'placeholder': "Адреса електронної скриньки"}), required=False)
     # phone = forms.CharField(max_length=20, widget=forms.TextInput(attrs={
     #     "type": "text",
     #     "class": "form-control",
@@ -39,6 +39,7 @@ class UserRegistrationForm(UserCreationForm):
         'class': 'form-control py-4', 'placeholder': "Придумайте та введіть пароль"}))
     password2 = forms.CharField(widget=forms.PasswordInput(attrs={
         'class': 'form-control py-4', 'placeholder': "Введіть пароль ще раз"}))
+    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
 
     class Meta:
         model = User
