@@ -78,7 +78,23 @@ def reservation(request, room_id):
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
-            form.save()
+            # form.save()
+            """ варіант збереження через інстанс моделі
+            в цьому варіанті можна пхати дані які забажаєш вже в саму модель,
+            хочеш з форми, хочеш з іншої форми, якщо їх декілька, хочеш просто пишеш щось
+            коду більше, але руки не звязані віджетами всякими прихованими, які потрібно пхати у форму
+            думаю цей варіант використовують частіше
+            """
+            reservation_instans = Reservation(
+                name='бабаГася',
+                user_id=2,
+                room_id=form.cleaned_data["room_id"],
+                message=form.cleaned_data["message"],
+                phone=form.cleaned_data["phone"],
+                persons=145,
+
+            )
+            reservation_instans.save()
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
@@ -91,6 +107,7 @@ def reservation(request, room_id):
         last_name = user.last_name if user.is_authenticated else None
         user_id = request.user.id if user.is_authenticated else None
         user_email = request.user.email if user.is_authenticated else None
+        user_phone = request.user.phone if user.is_authenticated else None
 
         form = RoomReservationForm(initial={
             'room_id': room_id,
@@ -100,6 +117,7 @@ def reservation(request, room_id):
             'last_name': last_name,
             'user_id': user_id,
             'user_email': user_email,
+            'phone': user_phone,
         })
 
     room = Room.objects.get(id=room_id)

@@ -50,11 +50,8 @@ class UserProfileForm(UserChangeForm):
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4', "readonly": True}))
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
+    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "username", "email")
-
-
-
-
+        fields = ("first_name", "last_name", "username", "email", "phone")
