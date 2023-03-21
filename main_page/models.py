@@ -141,7 +141,7 @@ class Reservation(models.Model):
     room_id = models.IntegerField(null=True, blank=True)
     room_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     user_id = models.IntegerField(null=True, blank=True)
-    # user_email = models.CharField(max_length=100, blank=True)
+    user_email = models.CharField(max_length=100, blank=True, null=True)
 
     date = models.DateField(auto_now_add=True)
     date_processing = models.DateField(auto_now=True)

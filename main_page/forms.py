@@ -37,7 +37,7 @@ class RoomReservationForm(forms.ModelForm):
         'type': "hidden", "class": "form-control", "name": "user_id"}),
         required=False)
 
-    # user_email = forms.CharField(widget=forms.CharField)
+    user_email = forms.CharField(widget=forms.CharField)
 
     class Meta:
         model = Reservation
