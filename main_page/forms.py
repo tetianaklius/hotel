@@ -4,9 +4,9 @@ from main_page.models import Reservation
 
 class RoomReservationForm(forms.ModelForm):
     """
-    This form is filled by the user and transmits information to the model Reservation. This form contains fields
-    for information needed to send a room reservation request in the hotel.
-    The request will be manually processed by the manager.
+    This form is filled by the user and transmits this information and some internal information
+    to the model Reservation. This form contains fields for information needed to send a room reservation request
+    in the hotel. The request will be manually processed by the manager.
     """
     name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Ім'я"}))
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': "Прізвище"}),
