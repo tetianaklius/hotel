@@ -10,6 +10,7 @@ class RoomPhotoAdmin(admin.TabularInline):
 
 @admin.register(Room)
 class RoomAdmin(admin.ModelAdmin):
+    """Class that allows to manage and display in admin panel all instances of a category Room"""
     model = Room
     inlines = [RoomPhotoAdmin]
     list_display = ["inn_number", "title", "position", "is_visible", "price", "special_offer"]
@@ -19,6 +20,7 @@ class RoomAdmin(admin.ModelAdmin):
 
 @admin.register(RoomPhoto)
 class AdminAllRoomPhoto(admin.ModelAdmin):
+    """Class that allows to manage and display in admin panel all instances of a category RoomPhoto"""
     model = RoomPhoto
     list_filter = ["room"]
     list_display = ["room", "position"]
@@ -27,6 +29,7 @@ class AdminAllRoomPhoto(admin.ModelAdmin):
 
 @admin.register(Gallery)
 class AdminGallery(admin.ModelAdmin):
+    """Class that allows to manage and display in admin panel all instances of a category Gallery"""
     model = Gallery
     list_filter = ["season", "is_visible"]
     list_display = ["inn_short_desc", "season", "is_visible"]
@@ -39,6 +42,7 @@ admin.site.register(Contacts)
 
 @admin.register(CategoryRoom)
 class CategoryRoomAdmin(admin.ModelAdmin):
+    """Class that allows to manage and display in admin panel all instances of a category CategoryRoom"""
     model = CategoryRoom
     list_display = ["title", "is_visible"]
     list_filter = ["is_visible"]
@@ -46,6 +50,7 @@ class CategoryRoomAdmin(admin.ModelAdmin):
 
 @admin.register(Reservation)
 class AdminReservation(admin.ModelAdmin):
+    """Class that allows to manage and display in admin panel all instances of a category Reservation"""
     model = Reservation
     list_display = ["name", "phone", "persons", "is_processed"]
     list_filter = ["persons", "is_processed", "date"]

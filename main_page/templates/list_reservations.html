@@ -10,6 +10,7 @@
         <div class="row">
             <div class="col-lg-7">
                 <h2 class="mt-3 mb-3">Запити</h2>
+
                 {% for item in reservations %}
                     <div class="row">
                         <div class="col-md-3">
@@ -19,7 +20,7 @@
                         </div>
                         <div class="col-md-3"><b>{{ item.name }}</b> {{ item.last_name }}</div>
                         <div class="col-md-3">{{ item.phone }}</div>
-                        <div class="col-md-3">осіб: <b>{{ item.persons }}</b>; номер: {{ item.room_id }};
+                        <div class="col-md-3">осіб: <b>{{ item.persons }}</b>; номер(id): {{ item.room_id }};
                             ціна: {{ item.room_price }}<i> "{{ item.message }}"</i></div>
                         <div style="font-size: small">{{ item.date|date:"d-m-Y" }}</div>
                     </div>

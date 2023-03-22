@@ -7,6 +7,7 @@ from main_page.models import About
 
 
 def login_view(request):
+    """Method allow to enter to personal account on site."""
     if request.method == "POST":
         form = UserLoginForm(data=request.POST)
         if form.is_valid():
@@ -23,11 +24,13 @@ def login_view(request):
 
 
 def logout_view(request):
+    """Method allow to go out of personal account on site."""
     auth.logout(request)
     return redirect("/")
 
 
 def registration_view(request):
+    """Method allow to create personal user account on site."""
     if request.method == "POST":
         form = UserRegistrationForm(data=request.POST)
         if form.is_valid():
@@ -39,6 +42,7 @@ def registration_view(request):
 
 
 def profile_view(request):
+    """Method allow to render page with information of personal user account on site."""
     if request.method == "POST":
         form = UserProfileForm(data=request.POST, instance=request.user)
         if form.is_valid():

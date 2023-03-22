@@ -136,13 +136,11 @@ def update_reservation(request, pk):
     return redirect("main_page:list_reservations")
 
 
-@login_required(login_url="/login/")
+@login_required(login_url="login/")
 @user_passes_test(is_manager)
 def list_reservations(request):
     messages = Reservation.objects.filter(is_processed=False)
-    for item in messages:
-        room = Room.objects.get(id=item.room_id)
-        room_price = room.price
 
     return render(request, "list_reservations.html",
-                  context={"reservations": messages, "room": room, "room_price": room_price, })
+                  context={"reservations": messages, })
+
