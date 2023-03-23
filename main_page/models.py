@@ -77,6 +77,7 @@ class RoomPhoto(models.Model):
     """
 
     def get_file_name(self, file_name: str):
+        """This method helps to create a new image file name with the given file extension."""
         ext = file_name.strip().split(".")[-1]
         file_name = f"{uuid.uuid4()}.{ext}"
         return os.path.join("room_photo", file_name)
@@ -98,11 +99,11 @@ class Gallery(models.Model):
     This class contains instances with general images for main page of the site, section Gallery.
     There are images (photo), their description (desc) for users, short description (inn_short_desc)
     for string presentation in admin panel, season of the year (season) for convenient filtering in admin panel.
-    Fields "title_site" and "subtitle_site" were created as fallbacks for the section heading and subheading
-    (for manual control by the manager or administrator).
+    (Fields "title_site" and "subtitle_site" were created as fallbacks for the section heading and subheading
+    (for manual control by the manager or administrator)).
     """
-    title_site = models.TextField(max_length=80, blank=True)
-    subtitle_site = models.TextField(max_length=250, blank=True)
+    # title_site = models.TextField(max_length=80, blank=True)
+    # subtitle_site = models.TextField(max_length=250, blank=True)
     photo = models.ImageField(upload_to="gallery", blank=False)
     desc = models.TextField(max_length=250, blank=True)
     inn_short_desc = models.CharField(max_length=30, blank=False)
@@ -175,9 +176,9 @@ class Contacts(models.Model):
 class Reservation(models.Model):
     """
     This class contains fields needed to send request of room reservation by the user and save this information
-    for manager. There is input information about user who want to reserve room (name, last name, phone, email),
-    additional information from user (message, quantity of persons is needed),
-    some internal information: room_id, room price, user_id, date of request from user (date),
+    (for future processing by manager). There is input information about user who want to reserve room
+    (name, last name, phone, email), additional input information from user (message, quantity of persons is needed),
+    some internal information: room id, room price, user id, date of request from user (date),
     date of processing by the manager (date_processing) and state of processing (is_processed: yes or not).
     """
     phone_validator = RegexValidator(regex=r"^\+?3?8?0\d{2}[- ]?(\d[- ]?){7}$", message="Помилка в номері телефону")

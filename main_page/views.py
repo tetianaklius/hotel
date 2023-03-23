@@ -45,9 +45,9 @@ def room_selection(request, category_persons=None):
     :param request: WSGIRequest from path function in urlpatterns.
     :param category_persons: this is value of attribute "persons" of selected room category
         (room category is an instance of the class CategoryRoom).
-    :return: render page with filtered rooms with actual prices.
+    :return: render html page with filtered rooms with actual prices (according to price policy).
     """
-    if category_persons:  # if category is selected by user
+    if category_persons:  # if some category is selected by user
         if category_persons == 1:
             rooms_show = Room.objects.filter(is_visible=True, for_single=True)  # filtered rooms by "for_single" value
             for item in rooms_show:
@@ -55,7 +55,7 @@ def room_selection(request, category_persons=None):
                     item.price = item.price_1person  # usual price of the room is replaced by price for 1 person
                     item.price_comment = "(ціна за номер для проживання 1 особи)"  # comment to the new price
 
-        elif category_persons == 2:
+        elif category_persons == 2:  # there will be filtered rooms with this or greater persons quantity
             rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
             for item in rooms_show:
                 if item.price_2person:  # if price for 2 persons for this room is exist (is filled)
@@ -93,7 +93,7 @@ def room_details(request, room_id: int):
     This function render the page with detailed information of selected room (instance of class Room).
     :param request: WSGIRequest from path function in urlpatterns.
     :param room_id: id of selected room.
-    :return:
+    :return: render html page (HttpResponse).
     """
     if room_id:
         room = Room.objects.filter(id=room_id).first()
@@ -105,10 +105,11 @@ def room_details(request, room_id: int):
 
 def reservation(request, room_id):
     """
-    This function works with form of room reservation and site page with this form.
+    This function works with form of room reservation and site page with this form,
+    which allow user to fill and send request of room reservation.
     :param request: WSGIRequest from path function in urlpatterns.
     :param room_id: id of selected room to reserve.
-    :return:
+    :return: render (HttpResponse).
     """
     user = request.user
 
@@ -156,16 +157,11 @@ def reservation(request, room_id):
     })
 
 
-# def filter_(request, category_id):
-#     rooms = Room.objects.filter(category_id)
-#     return render(request, "rooms.html", context={"rooms": rooms, })
-
-
 @login_required(login_url="/login/")
 @user_passes_test(is_manager)  # only user member of group "manager" has access
 def update_reservation(request, pk: int):
     """
-    This function allows the manager to update the reservation status after manual processing
+    This function allows the manager to update the reservation status (to "processed") after manual processing
     (phone talk with client, approval of details, booking confirmation).
     :param request: WSGIRequest from path function in urlpatterns.
     :param pk: pk of reservation (instance of class Reservation) to be updated.
