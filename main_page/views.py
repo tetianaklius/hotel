@@ -39,7 +39,7 @@ def main(request):
     })
 
 
-def room_selection(request, category_persons=None):
+def room_selection(request, category_persons: int = None):
     """
     This function helps user to filter rooms by category and implements the price policy of the rooms.
     :param request: WSGIRequest from path function in urlpatterns.
@@ -103,7 +103,7 @@ def room_details(request, room_id: int):
         })
 
 
-def reservation(request, room_id):
+def reservation(request, room_id: int):
     """
     This function works with form of room reservation and site page with this form,
     which allow user to fill and send request of room reservation.
@@ -184,4 +184,3 @@ def list_reservations(request):
 
     return render(request, "list_reservations.html",
                   context={"reservations": messages, })
-
