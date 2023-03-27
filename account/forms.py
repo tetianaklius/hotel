@@ -2,6 +2,8 @@ from django import forms
 from django.contrib.auth.forms import AuthenticationForm, UserChangeForm, UserCreationForm
 from django.contrib.auth.models import User
 
+from account.models import UserProfile
+
 
 class UserLoginForm(AuthenticationForm):
     """Form for login to personal user`s account."""
@@ -46,8 +48,15 @@ class UserProfileForm(UserChangeForm):
     last_name = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
     username = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4', "readonly": True}))
     email = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
-    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
 
     class Meta:
         model = User
-        fields = ("first_name", "last_name", "username", "email", "phone")
+        fields = ("first_name", "last_name", "username", "email")
+
+
+class AddUserProfileForm(forms.ModelForm):
+    phone = forms.CharField(widget=forms.TextInput(attrs={'class': 'form-control py-4'}), required=False)
+
+    class Meta:
+        model = UserProfile
+        fields = ("phone",)

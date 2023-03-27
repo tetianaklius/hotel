@@ -1,10 +1,15 @@
+from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
+from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
+
+
+User = get_user_model()
 
 
 def is_manager(user):
@@ -136,7 +141,7 @@ def reservation(request, room_id: int):
         last_name = user.last_name if user.is_authenticated else None
         user_id = request.user.id if user.is_authenticated else None
         user_email = request.user.email if user.is_authenticated else None
-        user_phone = request.user.phone if user.is_authenticated else None
+        user_phone = UserProfile.objects.filter(user=user).first().phone if user.is_authenticated else None
 
         form = RoomReservationForm(initial={
             'room_id': room_id,
