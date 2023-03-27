@@ -59,35 +59,37 @@
 
         <nav id="navbar" class="navbar order-last order-lg-0">
             <ul>
-{#                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>#}
+                {#                <li><a class="nav-link scrollto active" href="#hero">Home</a></li>#}
                 <li><a class="nav-link scrollto" href="{% url "main_page:room_selection" %}">Номери</a></li>
                 <li><a class="nav-link scrollto" href="{% url "main_page:main_path" %}#hero">Про нас</a></li>
                 <li><a class="nav-link scrollto" href="{% url "main_page:main_path" %}#gallery">Світлини</a></li>
                 <li><a class="nav-link scrollto" href="{% url "main_page:main_path" %}#contacts">Контакти</a></li>
-                {% if "manager" in user.groups.all.0.name %}
-                    <li class="dropdown"><a href="#"><span>Менеджер(ка)</span> <i class="bi bi-chevron-down"></i></a>
+
+                <li class="dropdown"><a href="#"><span>Користувач(ка) {{ user.username }}</span> <i
+                        class="bi bi-chevron-down"></i></a>
+                    {% if user.username %}
                         <ul>
-                            <li><a href="{% url "main_page:list_reservations" %}">Запити</a></li>
-                        </ul>
-                    </li>
-                {% endif %}
-                {% if user.is_superuser or "admin" in user.groups.all.0.name %}
-                    <li><a href="{% url "admin:index" %}"><span>Адмін</span></a>
-                {% endif %}
-                    <li class="dropdown"><a href="#"><span>Користувач(ка) {{ user.username }}</span> <i class="bi bi-chevron-down"></i></a>
-                        {% if user.username %}
-                        <ul>
-                            <li><a href="{% url "account:profile" %}">Переглянути профіль</a></li>
+                            {% if user.is_superuser or "admin" in user.groups.all.0.name %}
+                                <li><a href="{% url "admin:index" %}"><span>Адмін-панель</span></a>
+                                    {% else %}
+                                <li><a href="{% url "account:profile" %}">Переглянути профіль</a></li>
+                            {% endif %}
+
+                            {% if "manager" in user.groups.all.0.name %}
+                                <li><a href="{% url "main_page:list_reservations" %}">Бронювання</a></li>
+                            {% endif %}
+
+
                             <li><a href="{% url "account:logout_view" %}">Вийти</a></li>
                         </ul>
-                    </li>
-                        {% else %}
+                        </li>
+                    {% else %}
                         <ul>
                             <li><a href="{% url "account:login_view" %}">Увійти</a></li>
                             <li><a href="{% url "account:registration_view" %}">Зареєструватись</a></li>
                         </ul>
-                        {% endif %}
-                        </ul>
+                    {% endif %}
+            </ul>
 
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav><!-- .navbar -->
@@ -105,11 +107,11 @@
     <div class="container">
         <h3>Садиба «Леонтія»</h3>
         <p>Відпочивайте та оздоровлюйтесь разом із нами!</p>
-{#        <div class="social-links">#}
-{#            <a href="https://twitter.com/twitter?lang=uk" class="twitter"><i class="bx bxl-twitter"></i></a>#}
-{#            <a href="https://www.instagram.com/instagram/" class="instagram"><i class="bx bxl-instagram"></i></a>#}
-{#            <a href="https://ua.linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>#}
-{#        </div>#}
+        {#        <div class="social-links">#}
+        {#            <a href="https://twitter.com/twitter?lang=uk" class="twitter"><i class="bx bxl-twitter"></i></a>#}
+        {#            <a href="https://www.instagram.com/instagram/" class="instagram"><i class="bx bxl-instagram"></i></a>#}
+        {#            <a href="https://ua.linkedin.com/" class="linkedin"><i class="bx bxl-linkedin"></i></a>#}
+        {#        </div>#}
         <div class="copyright">
             &copy; Copyright <strong><span></span></strong>. Всі авторські права захищено
         </div>
