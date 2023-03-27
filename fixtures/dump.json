@@ -1,0 +1,2777 @@
+[
+  {
+    "model": "admin.logentry",
+    "pk": 1,
+    "fields": {
+      "action_time": "2023-03-27T05:28:16.121Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "manager",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 2,
+    "fields": {
+      "action_time": "2023-03-27T05:29:06.185Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "manager",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 3,
+    "fields": {
+      "action_time": "2023-03-27T05:36:28.291Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "3",
+      "object_repr": "manager",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 4,
+    "fields": {
+      "action_time": "2023-03-27T05:48:25.725Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "2",
+      "object_repr": "admin",
+      "action_flag": 1,
+      "change_message": "[{\"added\": {}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 5,
+    "fields": {
+      "action_time": "2023-03-27T05:49:04.790Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "manager",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 6,
+    "fields": {
+      "action_time": "2023-03-27T05:49:30.326Z",
+      "user": 1,
+      "content_type": 4,
+      "object_id": "4",
+      "object_repr": "admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Staff status\", \"Groups\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 7,
+    "fields": {
+      "action_time": "2023-03-27T05:51:49.275Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "2",
+      "object_repr": "admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 8,
+    "fields": {
+      "action_time": "2023-03-27T05:53:24.674Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "2",
+      "object_repr": "Fynjy: 0665664585",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 9,
+    "fields": {
+      "action_time": "2023-03-27T05:53:24.683Z",
+      "user": 1,
+      "content_type": 11,
+      "object_id": "1",
+      "object_repr": "Ntnzyf: 098-566-55-88",
+      "action_flag": 3,
+      "change_message": ""
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 10,
+    "fields": {
+      "action_time": "2023-03-27T05:54:34.496Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "2",
+      "object_repr": "admin",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "admin.logentry",
+    "pk": 11,
+    "fields": {
+      "action_time": "2023-03-27T05:54:42.840Z",
+      "user": 1,
+      "content_type": 3,
+      "object_id": "1",
+      "object_repr": "manager",
+      "action_flag": 2,
+      "change_message": "[{\"changed\": {\"fields\": [\"Permissions\"]}}]"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add about",
+      "content_type": 7,
+      "codename": "add_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change about",
+      "content_type": 7,
+      "codename": "change_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete about",
+      "content_type": 7,
+      "codename": "delete_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view about",
+      "content_type": 7,
+      "codename": "view_about"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add category room",
+      "content_type": 8,
+      "codename": "add_categoryroom"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change category room",
+      "content_type": 8,
+      "codename": "change_categoryroom"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete category room",
+      "content_type": 8,
+      "codename": "delete_categoryroom"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view category room",
+      "content_type": 8,
+      "codename": "view_categoryroom"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 33,
+    "fields": {
+      "name": "Can add contacts",
+      "content_type": 9,
+      "codename": "add_contacts"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 34,
+    "fields": {
+      "name": "Can change contacts",
+      "content_type": 9,
+      "codename": "change_contacts"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 35,
+    "fields": {
+      "name": "Can delete contacts",
+      "content_type": 9,
+      "codename": "delete_contacts"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 36,
+    "fields": {
+      "name": "Can view contacts",
+      "content_type": 9,
+      "codename": "view_contacts"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 37,
+    "fields": {
+      "name": "Can add gallery",
+      "content_type": 10,
+      "codename": "add_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 38,
+    "fields": {
+      "name": "Can change gallery",
+      "content_type": 10,
+      "codename": "change_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 39,
+    "fields": {
+      "name": "Can delete gallery",
+      "content_type": 10,
+      "codename": "delete_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 40,
+    "fields": {
+      "name": "Can view gallery",
+      "content_type": 10,
+      "codename": "view_gallery"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 41,
+    "fields": {
+      "name": "Can add reservation",
+      "content_type": 11,
+      "codename": "add_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 42,
+    "fields": {
+      "name": "Can change reservation",
+      "content_type": 11,
+      "codename": "change_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 43,
+    "fields": {
+      "name": "Can delete reservation",
+      "content_type": 11,
+      "codename": "delete_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 44,
+    "fields": {
+      "name": "Can view reservation",
+      "content_type": 11,
+      "codename": "view_reservation"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 45,
+    "fields": {
+      "name": "Can add room",
+      "content_type": 12,
+      "codename": "add_room"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 46,
+    "fields": {
+      "name": "Can change room",
+      "content_type": 12,
+      "codename": "change_room"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 47,
+    "fields": {
+      "name": "Can delete room",
+      "content_type": 12,
+      "codename": "delete_room"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 48,
+    "fields": {
+      "name": "Can view room",
+      "content_type": 12,
+      "codename": "view_room"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 49,
+    "fields": {
+      "name": "Can add room photo",
+      "content_type": 13,
+      "codename": "add_roomphoto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 50,
+    "fields": {
+      "name": "Can change room photo",
+      "content_type": 13,
+      "codename": "change_roomphoto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 51,
+    "fields": {
+      "name": "Can delete room photo",
+      "content_type": 13,
+      "codename": "delete_roomphoto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 52,
+    "fields": {
+      "name": "Can view room photo",
+      "content_type": 13,
+      "codename": "view_roomphoto"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 53,
+    "fields": {
+      "name": "Can add user profile",
+      "content_type": 14,
+      "codename": "add_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 54,
+    "fields": {
+      "name": "Can change user profile",
+      "content_type": 14,
+      "codename": "change_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 55,
+    "fields": {
+      "name": "Can delete user profile",
+      "content_type": 14,
+      "codename": "delete_userprofile"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 56,
+    "fields": {
+      "name": "Can view user profile",
+      "content_type": 14,
+      "codename": "view_userprofile"
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 1,
+    "fields": {
+      "name": "manager",
+      "permissions": [
+        56,
+        32,
+        40,
+        44,
+        48,
+        52
+      ]
+    }
+  },
+  {
+    "model": "auth.group",
+    "pk": 2,
+    "fields": {
+      "name": "admin",
+      "permissions": [
+        56,
+        16,
+        25,
+        26,
+        28,
+        29,
+        30,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        40,
+        41,
+        42,
+        44,
+        45,
+        46,
+        48,
+        49,
+        50,
+        52
+      ]
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$cI27GsA8uUCA311oYEX5gP$o+Wv9s6XfL6SZ0TC0qinDpVWa7u5TWw2UF1yOx6z9Ao=",
+      "last_login": "2023-03-27T05:45:33.534Z",
+      "is_superuser": true,
+      "username": "olexa",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-03-27T04:58:26.541Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$Nj3qAw48icUbvosSz1Pv17$pda5K9x/7xfv40jxLpBq4ny6GPEZAH0/bcEmh30LHYo=",
+      "last_login": "2023-03-27T05:58:03.985Z",
+      "is_superuser": false,
+      "username": "user",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2023-03-27T05:26:31.997Z",
+      "groups": [],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$scKVTF6F9F5CTdRFfUORtR$LK+QrqZ7pf9kc5Ad/IJbtTBKPRrbkDN3NwdJ1F11434=",
+      "last_login": "2023-03-27T05:44:07.089Z",
+      "is_superuser": false,
+      "username": "manager",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-03-27T05:29:58Z",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "auth.user",
+    "pk": 4,
+    "fields": {
+      "password": "pbkdf2_sha256$390000$n3QOYm8MBo1TquFcyp1xML$BD1+0OkcadmkLEB7MdTdmozTH9eoC0JF9h1EBtwkG00=",
+      "last_login": "2023-03-27T05:54:52.699Z",
+      "is_superuser": false,
+      "username": "admin",
+      "first_name": "",
+      "last_name": "",
+      "email": "",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2023-03-27T05:46:42Z",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": {
+      "app_label": "admin",
+      "model": "logentry"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": {
+      "app_label": "auth",
+      "model": "permission"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": {
+      "app_label": "auth",
+      "model": "group"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": {
+      "app_label": "auth",
+      "model": "user"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": {
+      "app_label": "contenttypes",
+      "model": "contenttype"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": {
+      "app_label": "sessions",
+      "model": "session"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": {
+      "app_label": "main_page",
+      "model": "about"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": {
+      "app_label": "main_page",
+      "model": "categoryroom"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 9,
+    "fields": {
+      "app_label": "main_page",
+      "model": "contacts"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 10,
+    "fields": {
+      "app_label": "main_page",
+      "model": "gallery"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 11,
+    "fields": {
+      "app_label": "main_page",
+      "model": "reservation"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 12,
+    "fields": {
+      "app_label": "main_page",
+      "model": "room"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 13,
+    "fields": {
+      "app_label": "main_page",
+      "model": "roomphoto"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 14,
+    "fields": {
+      "app_label": "account",
+      "model": "userprofile"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "a9fcae3u2tf9evxpbotiwg6uwwq3hokk",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2pBCoYBL956BzAyDVA0kpV0Z765NutDtf-_9l4iwrSVunZc4J3EWWpx-NwR6cN1BukO9NUmtrsuMclfkQbu8tsTPy-H-HRTo5VtPwTjKWWsLGVVyiGwG9kFTmtgpp72xIyF5h8NIatTWEoAy7FERBifeH_KSOC8:1pgfrn:O9NPt9bAalwtam-JIangcFfbpOz3LrNBxI_GYEt9uG4",
+      "expire_date": "2023-04-10T05:58:03.994Z"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "nkyr203i7h04l1jo8sfhk1gg3290pgq7",
+    "fields": {
+      "session_data": ".eJxVjDsOwjAQBe_iGlnZDfKHkp4zWOtdGweQLcVJFXF3iJQC2jczb1OB1qWEtac5TKIuCtTpd4vEz1R3IA-q96a51WWeot4VfdCub03S63q4fweFevnWbjSeANiJRSsZnRk5i0HLMqAfwJzRxsxpjJxyBiCyAh4kEYonz-r9AeI_OJE:1pgfXD:2G5s37kgvTfkPDy36zy2K7vA57nUj8d6Y_bg1_Iepdo",
+      "expire_date": "2023-04-10T05:36:47.365Z"
+    }
+  },
+  {
+    "model": "main_page.categoryroom",
+    "pk": 1,
+    "fields": {
+      "title": "Для двох",
+      "position": 2,
+      "is_visible": true,
+      "persons": 2
+    }
+  },
+  {
+    "model": "main_page.categoryroom",
+    "pk": 2,
+    "fields": {
+      "title": "Для трьох",
+      "position": 3,
+      "is_visible": true,
+      "persons": 3
+    }
+  },
+  {
+    "model": "main_page.categoryroom",
+    "pk": 4,
+    "fields": {
+      "title": "З домашніми улюбленцями",
+      "position": 5,
+      "is_visible": true,
+      "persons": 10
+    }
+  },
+  {
+    "model": "main_page.categoryroom",
+    "pk": 5,
+    "fields": {
+      "title": "Для однієї особи",
+      "position": 1,
+      "is_visible": true,
+      "persons": 1
+    }
+  },
+  {
+    "model": "main_page.categoryroom",
+    "pk": 6,
+    "fields": {
+      "title": "Для чотирьох",
+      "position": 4,
+      "is_visible": true,
+      "persons": 4
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 7,
+    "fields": {
+      "title": "Номер в окремому будиночку, 2 поверх",
+      "desc": "Суперзатишний та комфортний номер в окремому невеликому будиночку.\r\nВ основній кімнаті розташоване двоспальне ліжко, стіл, телевізор, настільна лампа, просторі місткі полиці-ніші, шафа, обігрівач.\r\nДруга кімната — світла та простора лоджія, що дає змогу побути наодинці з природою. У будь-яку пору року там можна відпочити та помилуватись краєвидом: помріяти серед засніжених гілок дерев взимку, послухати спів пташок навесні, послухати цвіркунів влітку та погрітись у промінцях сонця восени.\r\nНа лоджії є розкладний диван, стіл зі стільцями, зручна компактна кухня з необхідним начинням, шафа, обігрівач.\r\nУ номері також є ванна кімната, передпокій із великою тумбою. Вхід у номер зі зовнішніх окремих сходів.",
+      "position": 1,
+      "is_visible": true,
+      "persons": 3,
+      "price": "900.00",
+      "price_comment": "",
+      "price_1person": "700.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": true,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_125822.jpg",
+      "inn_number": 25,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 8,
+    "fields": {
+      "title": "Номер в окремому будиночку, 1 поверх",
+      "desc": "Затишний просторий номер в окремому невеликому будиночку.\r\nВ основній кімнаті: двоспальне ліжко, шафа, тумба, місткі полиці-ніші, телевізор, обігрівач.\r\nУ світлій та затишній лоджії розташована зона відпочинку (диван, стіл зі стільцями) з настінним обігрівачем, а також компактна кухня з необхідним начинням. \r\nТакож у номері є ванна кімната та передпокій із шафою-купе з великими дзеркалами.\r\nВхід у номер окремий, із подвір'я.",
+      "position": 2,
+      "is_visible": true,
+      "persons": 3,
+      "price": "800.00",
+      "price_comment": "",
+      "price_1person": "600.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": "1100.00",
+      "special_offer": false,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_131441.jpg",
+      "inn_number": 12,
+      "for_single": true,
+      "with_pets": true,
+      "first_floor": true
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 9,
+    "fields": {
+      "title": "Тримісний двокімнатний номер 1",
+      "desc": "Номер має дві основні кімнати, а також ванну кімнату, передпокій та кухню.\r\nВ основній кімнаті: двоспальне ліжко, тумби з шухлядами, настільна лампа, телевізор.\r\nУ другій кімнаті є розкладний диван, стіл зі стільцями, шафа, тумби. Тут є сполучення з кухнею. Кухня та ванна мають все необхідне базове начиння. У передпокої також є містка шафа з полицями та шухлядами.\r\nВхід у номер із загального зовнішнього балкона.",
+      "position": 9,
+      "is_visible": true,
+      "persons": 3,
+      "price": "750.00",
+      "price_comment": "",
+      "price_1person": "650.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_134248.jpg",
+      "inn_number": 5,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 10,
+    "fields": {
+      "title": "Тримісний двокімнатний номер 2",
+      "desc": "Номер має дві основні кімнати, а також ванну кімнату, передпокій та кухню.\r\nВ основній кімнаті: ліжко з приліжковими тумбами, стіл, настільна лампа, шафа, телевізор.\r\nУ другій кімнаті є розкладний диван, стіл зі стільцями, шафа. Звідси є вхід на кухню. Кухня та ванна мають все необхідне базове начиння.\r\nВхід у номер із загального зовнішнього балкона.",
+      "position": 6,
+      "is_visible": true,
+      "persons": 3,
+      "price": "700.00",
+      "price_comment": "",
+      "price_1person": "550.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_135457.jpg",
+      "inn_number": 6,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 11,
+    "fields": {
+      "title": "Двомісний номер, 2 поверх, східна сторона",
+      "desc": "Комфортний 2-місний номер із затишною кухнею на лоджії. Вікно на схід.\r\nУ номері є ванна кімната та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
+      "position": 3,
+      "is_visible": true,
+      "persons": 2,
+      "price": "750.00",
+      "price_comment": "",
+      "price_1person": "600.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_141411.jpg",
+      "inn_number": 7,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 13,
+    "fields": {
+      "title": "Затишний 2-місний номер із лоджією",
+      "desc": "Затишний 2-місний номер із краєвидом на лісовий пагорб та дерев'яний будиночок. \r\nВ основній кімнаті є двоспальне ліжко з приліжковими тумбами, стіл зі стільцем, настільна лампа, телевізор.\r\nНа лоджії розташована компактна кухня з необхідним начинням та зона відпочинку. Великі вікна забезпечують багато денного світла та простору.\r\nТакож у номері зручна ванна кімната з теплою підлогою та передпокій із шафою.\r\nНомер розташований на 2 поверсі, вхід через загальний коридор будинку.",
+      "position": 4,
+      "is_visible": true,
+      "persons": 2,
+      "price": "850.00",
+      "price_comment": "",
+      "price_1person": "700.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_140732.jpg",
+      "inn_number": 10,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 14,
+    "fields": {
+      "title": "Двомісний напівлюкс із кухнею-лоджією",
+      "desc": "Комфортний двомісний напівлюкс із кухнею-лоджією саме для вас, якщо ви любите спостерігати за всім, що відбувається навколо. Із вікон лоджії видно все подвір'я садиби, лісовий пагорб поруч та обриси навколишніх гір.\r\nВ номері є ванна кімната, передпокій із великою шафою. На лоджії розміщена компактна кухня та зона відпочинку для ранкового кавування та чаювання. Детальніше на фото.",
+      "position": 5,
+      "is_visible": true,
+      "persons": 2,
+      "price": "900.00",
+      "price_comment": "",
+      "price_1person": "750.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_141941.jpg",
+      "inn_number": 11,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 15,
+    "fields": {
+      "title": "Двомісний номер з односпальними ліжками",
+      "desc": "",
+      "position": 10,
+      "is_visible": true,
+      "persons": 2,
+      "price": "700.00",
+      "price_comment": "",
+      "price_1person": "500.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_143049_a8hjhg6.jpg",
+      "inn_number": 8,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 16,
+    "fields": {
+      "title": "Тримісний номер (2+1) на 1 поверсі",
+      "desc": "",
+      "position": 14,
+      "is_visible": true,
+      "persons": 3,
+      "price": "650.00",
+      "price_comment": "",
+      "price_1person": "500.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 2,
+      "title_photo": "title_photo/IMG_20230305_132532.jpg",
+      "inn_number": 14,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": true
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 17,
+    "fields": {
+      "title": "Двомісний номер із панорамним вікном на 3 поверсі",
+      "desc": "Номер розташований на 3 поверсі. Звідси відкривається чудовий краєвид на лісовий пагорб та навколишні гірські хребти, а також на саме подвір'я садиби.\r\nЯкщо вам до вподоби панорамні вікна та простір, то цей номер припаде до душі.\r\nВ основній кімнаті міститься ліжко, тумба з шухлядами, телевізор на стіні.\r\nНа лоджії — компактна затишна кухня та зона відпочинку з обігрівачем.\r\nУ номері також є ванна кімната та передпокій із великою шафою.\r\nВхід у номер із загального коридору будинку.",
+      "position": 7,
+      "is_visible": true,
+      "persons": 2,
+      "price": "800.00",
+      "price_comment": "",
+      "price_1person": "650.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_145203.jpg",
+      "inn_number": 21,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 18,
+    "fields": {
+      "title": "Двомісний номер на східній стороні на 3 поверсі",
+      "desc": "",
+      "position": 23,
+      "is_visible": true,
+      "persons": 2,
+      "price": "650.00",
+      "price_comment": "",
+      "price_1person": "500.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_143914.jpg",
+      "inn_number": 23,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 19,
+    "fields": {
+      "title": "Двомісний номер на 3 поверсі",
+      "desc": "",
+      "position": 24,
+      "is_visible": true,
+      "persons": 2,
+      "price": "700.00",
+      "price_comment": "",
+      "price_1person": "550.00",
+      "price_2person": null,
+      "price_3person": null,
+      "price_pets": null,
+      "special_offer": false,
+      "category": 1,
+      "title_photo": "title_photo/IMG_20230305_144503.jpg",
+      "inn_number": 24,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": false
+    }
+  },
+  {
+    "model": "main_page.room",
+    "pk": 20,
+    "fields": {
+      "title": "4-місний номер з окремими ліжками",
+      "desc": "",
+      "position": 15,
+      "is_visible": true,
+      "persons": 4,
+      "price": "850.00",
+      "price_comment": "",
+      "price_1person": "450.00",
+      "price_2person": "600.00",
+      "price_3person": "750.00",
+      "price_pets": null,
+      "special_offer": false,
+      "category": 6,
+      "title_photo": "title_photo/IMG_20230305_133635.jpg",
+      "inn_number": 15,
+      "for_single": true,
+      "with_pets": false,
+      "first_floor": true
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 17,
+    "fields": {
+      "photo": "room_photo/91612ae5-a435-480e-a6ba-45443472f032.jpg",
+      "position": 3,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 18,
+    "fields": {
+      "photo": "room_photo/1bf2877f-0e9a-467a-8dcd-a0cf970e9972.jpg",
+      "position": 4,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 19,
+    "fields": {
+      "photo": "room_photo/40ac1586-d22a-4fbd-a1e8-5f74e1f462ed.jpg",
+      "position": 1,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 20,
+    "fields": {
+      "photo": "room_photo/e320a6cd-0abe-459c-96ab-b1684a826c49.jpg",
+      "position": 2,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 21,
+    "fields": {
+      "photo": "room_photo/34c68573-5935-480d-aeed-bdf940db6654.jpg",
+      "position": 5,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 22,
+    "fields": {
+      "photo": "room_photo/6bc12a00-b5d6-48ff-a1bc-0f4b4463018c.jpg",
+      "position": 6,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 23,
+    "fields": {
+      "photo": "room_photo/c545e451-70c5-4ead-b6b9-3f6005c77fd0.jpg",
+      "position": 7,
+      "room": 14,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 24,
+    "fields": {
+      "photo": "room_photo/14f7d79c-8020-4e32-b09b-5073bf45554f.jpg",
+      "position": 15,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 25,
+    "fields": {
+      "photo": "room_photo/0f6a1ff3-31db-4d42-9bb0-b97f7347fa4c.jpg",
+      "position": 16,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 26,
+    "fields": {
+      "photo": "room_photo/e263cbfa-d280-4c3b-81c5-305ef66c5dc4.jpg",
+      "position": 17,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 27,
+    "fields": {
+      "photo": "room_photo/f260481c-2783-47d3-97a1-40f81e8d281c.jpg",
+      "position": 18,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 28,
+    "fields": {
+      "photo": "room_photo/bf56a3e0-93c5-4f77-b6c4-50210725032b.jpg",
+      "position": 19,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 29,
+    "fields": {
+      "photo": "room_photo/78619cd4-f229-4368-b50d-cc448782fc03.jpg",
+      "position": 20,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 30,
+    "fields": {
+      "photo": "room_photo/8d3b40a5-9105-4e8f-8c2d-65804af8997e.jpg",
+      "position": 21,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 31,
+    "fields": {
+      "photo": "room_photo/3895f8f7-4204-45e8-a94c-5ff4a2cd0476.jpg",
+      "position": 22,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 32,
+    "fields": {
+      "photo": "room_photo/fe31c753-0884-4e64-be9e-0101880e5213.jpg",
+      "position": 23,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 33,
+    "fields": {
+      "photo": "room_photo/055cd515-860e-4670-9401-7c1011b7a094.jpg",
+      "position": 24,
+      "room": 9,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 34,
+    "fields": {
+      "photo": "room_photo/f082c983-974b-4d72-8d5f-a754c031407a.jpg",
+      "position": 60,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 35,
+    "fields": {
+      "photo": "room_photo/a9720cee-c3dd-4ee2-87cc-091029a1e21c.jpg",
+      "position": 61,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 36,
+    "fields": {
+      "photo": "room_photo/f6fe68a4-a6cf-4ad7-afaf-4bfd95653f0b.jpg",
+      "position": 62,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 37,
+    "fields": {
+      "photo": "room_photo/366e4c9a-3e8f-4993-9708-f21b6b468bec.jpg",
+      "position": 63,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 38,
+    "fields": {
+      "photo": "room_photo/eda09951-c8fa-4c9f-8446-c81e535e75ad.jpg",
+      "position": 64,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 39,
+    "fields": {
+      "photo": "room_photo/dc8ad8ee-d2b9-4afc-b160-7e17d2c2ba08.jpg",
+      "position": 65,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 40,
+    "fields": {
+      "photo": "room_photo/acf02224-b584-4e90-ad32-5050b7057a72.jpg",
+      "position": 66,
+      "room": 10,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 41,
+    "fields": {
+      "photo": "room_photo/de26bb35-726d-4469-8313-a178a3ee4e1c.jpg",
+      "position": 70,
+      "room": 11,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 42,
+    "fields": {
+      "photo": "room_photo/7cad5766-d459-4c9b-a65c-d78895a9ea53.jpg",
+      "position": 71,
+      "room": 11,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 43,
+    "fields": {
+      "photo": "room_photo/be7efc72-5b8e-479b-9b89-a6ff9815fc72.jpg",
+      "position": 72,
+      "room": 11,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 44,
+    "fields": {
+      "photo": "room_photo/bce0d3b5-ea2d-433c-b9ca-255d68d74b01.jpg",
+      "position": 73,
+      "room": 11,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 45,
+    "fields": {
+      "photo": "room_photo/c36d0e89-c511-4576-a313-eb893451ea51.jpg",
+      "position": 74,
+      "room": 11,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 46,
+    "fields": {
+      "photo": "room_photo/5a6ca6b6-9402-4aee-ac92-9c0b5532c628.jpg",
+      "position": 80,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 47,
+    "fields": {
+      "photo": "room_photo/f494a6a0-8508-4dbb-a0da-bcb19f22e852.jpg",
+      "position": 81,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 48,
+    "fields": {
+      "photo": "room_photo/7eaef986-5daa-498b-8e01-bdab1bb31658.jpg",
+      "position": 82,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 49,
+    "fields": {
+      "photo": "room_photo/123ad53e-64d2-4aaa-8a94-490f67eb2ea3.jpg",
+      "position": 83,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 50,
+    "fields": {
+      "photo": "room_photo/47ffbb20-1034-493b-a3e6-399a77d7b943.jpg",
+      "position": 84,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 51,
+    "fields": {
+      "photo": "room_photo/4fd33851-e9cc-4554-81d7-a3dc1cbad05e.jpg",
+      "position": 85,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 52,
+    "fields": {
+      "photo": "room_photo/55fc062b-124d-4a56-b081-59c66a4e073d.jpg",
+      "position": 86,
+      "room": 15,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 53,
+    "fields": {
+      "photo": "room_photo/1ad1aecc-bda6-4620-b76a-216cfd08ffcd.jpg",
+      "position": 40,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 54,
+    "fields": {
+      "photo": "room_photo/27496fc2-d45e-4ef7-8e15-fe65fa3e8d85.jpg",
+      "position": 41,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 55,
+    "fields": {
+      "photo": "room_photo/2bc05c79-45f5-46bb-9e80-b1da92928ad7.jpg",
+      "position": 42,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 56,
+    "fields": {
+      "photo": "room_photo/c4544c89-38dd-4a74-a029-05e5db4b29d7.jpg",
+      "position": 43,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 57,
+    "fields": {
+      "photo": "room_photo/74a8e83b-92cd-4d8c-8189-a92f3ab0cc52.jpg",
+      "position": 44,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 58,
+    "fields": {
+      "photo": "room_photo/ed7ace76-3627-48de-a3e5-a18b972bd181.jpg",
+      "position": 45,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 59,
+    "fields": {
+      "photo": "room_photo/3e7f358b-8caf-40fa-8a6d-9935e0fef314.jpg",
+      "position": 46,
+      "room": 13,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 60,
+    "fields": {
+      "photo": "room_photo/949ce136-f1ef-4d19-90a8-c8548fbf7218.jpg",
+      "position": 251,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 61,
+    "fields": {
+      "photo": "room_photo/d9f484c5-aad4-4abc-96b1-a01569136718.jpg",
+      "position": 252,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 62,
+    "fields": {
+      "photo": "room_photo/94422f3c-d426-4c09-8ea2-9d819526e1e5.jpg",
+      "position": 253,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 63,
+    "fields": {
+      "photo": "room_photo/5128bb76-8f1b-4b1a-933e-4c4584b6ccab.jpg",
+      "position": 254,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 64,
+    "fields": {
+      "photo": "room_photo/e404c0d7-1d57-4d50-a9db-4a521f0eb05a.jpg",
+      "position": 255,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 65,
+    "fields": {
+      "photo": "room_photo/ad0fa6fe-581e-45ff-937b-c09135962928.jpg",
+      "position": 256,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 66,
+    "fields": {
+      "photo": "room_photo/23313a8d-27c8-49dc-be97-946fc36c544f.jpg",
+      "position": 257,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 67,
+    "fields": {
+      "photo": "room_photo/2c551245-cc64-4da2-b02f-6d163263fee8.jpg",
+      "position": 258,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 68,
+    "fields": {
+      "photo": "room_photo/8b486641-6777-4808-9e09-0dec8f20a853.jpg",
+      "position": 259,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 69,
+    "fields": {
+      "photo": "room_photo/d27399f7-75a5-4f57-9667-557e269d03ad.jpg",
+      "position": 260,
+      "room": 7,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 70,
+    "fields": {
+      "photo": "room_photo/78937f01-32f0-470d-ab9e-6990d7d2a3c5.jpg",
+      "position": 120,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 71,
+    "fields": {
+      "photo": "room_photo/8fdd1815-1584-45fc-9ee1-918c2131e289.jpg",
+      "position": 121,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 72,
+    "fields": {
+      "photo": "room_photo/b066e1c9-7d8d-4d30-8a6d-5a111f03c5b6.jpg",
+      "position": 122,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 73,
+    "fields": {
+      "photo": "room_photo/6dc44a46-9f7b-4f1f-b5b1-364a11e0354c.jpg",
+      "position": 123,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 74,
+    "fields": {
+      "photo": "room_photo/e05ecabd-c197-46d7-8f85-db83991d379b.jpg",
+      "position": 124,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 75,
+    "fields": {
+      "photo": "room_photo/031d666e-9c8b-4c74-a254-f55eb2079bd9.jpg",
+      "position": 125,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 76,
+    "fields": {
+      "photo": "room_photo/d0304a05-2b0c-424a-ab8d-89527fda2303.jpg",
+      "position": 126,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 77,
+    "fields": {
+      "photo": "room_photo/ad797a72-88d4-4527-be94-98bbe272571f.jpg",
+      "position": 127,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 78,
+    "fields": {
+      "photo": "room_photo/adc6a88d-789e-4a1e-83c8-6093a8c1401d.jpg",
+      "position": 128,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 79,
+    "fields": {
+      "photo": "room_photo/16813cf2-7bdd-421d-aa03-4ba6a7222f39.jpg",
+      "position": 129,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 80,
+    "fields": {
+      "photo": "room_photo/61a35cae-17fb-454c-9395-d63531c866f8.jpg",
+      "position": 130,
+      "room": 8,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 81,
+    "fields": {
+      "photo": "room_photo/16130458-fe96-41d2-9cb0-4dd89290f3c7.jpg",
+      "position": 140,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 82,
+    "fields": {
+      "photo": "room_photo/7db98ce5-0651-4735-9278-c6efdeb03ff2.jpg",
+      "position": 141,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 83,
+    "fields": {
+      "photo": "room_photo/04e78c62-d5a6-4887-ae1c-8103f6f20834.jpg",
+      "position": 142,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 84,
+    "fields": {
+      "photo": "room_photo/d2ad2bd0-4d79-44a7-b5e8-ccecc0718e52.jpg",
+      "position": 143,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 85,
+    "fields": {
+      "photo": "room_photo/3c1e0c4b-fcf7-4bd2-9d92-dd66d944b5da.jpg",
+      "position": 144,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 86,
+    "fields": {
+      "photo": "room_photo/de7a9cb7-1e78-4d4a-8171-a3c71caacf05.jpg",
+      "position": 145,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 87,
+    "fields": {
+      "photo": "room_photo/da8f0d92-d3c0-43d0-924d-c6f9a966389b.jpg",
+      "position": 146,
+      "room": 16,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 88,
+    "fields": {
+      "photo": "room_photo/c0975a38-8150-44b2-abef-21684f127190.jpg",
+      "position": 210,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 89,
+    "fields": {
+      "photo": "room_photo/db2c2bfe-03cd-4d0e-8ac6-915c61bd6718.jpg",
+      "position": 211,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 90,
+    "fields": {
+      "photo": "room_photo/0085c1b1-c64d-4f20-a308-9ff08823223a.jpg",
+      "position": 212,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 91,
+    "fields": {
+      "photo": "room_photo/92e94fea-3810-4982-a0bd-43aa4dfe8d88.jpg",
+      "position": 213,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 92,
+    "fields": {
+      "photo": "room_photo/55760d27-5079-4dec-9ffb-ae733dbcb7f1.jpg",
+      "position": 214,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 93,
+    "fields": {
+      "photo": "room_photo/450c4e99-7071-4579-ad73-876872b7cf46.jpg",
+      "position": 215,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 94,
+    "fields": {
+      "photo": "room_photo/0f88f24e-7068-48f4-ad0a-961e76d32e89.jpg",
+      "position": 216,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 95,
+    "fields": {
+      "photo": "room_photo/c6c11235-e789-4085-a891-7e84335c89bd.jpg",
+      "position": 217,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 96,
+    "fields": {
+      "photo": "room_photo/a90239d7-d9da-40cb-9ecc-db4c33d3839e.jpg",
+      "position": 218,
+      "room": 17,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 97,
+    "fields": {
+      "photo": "room_photo/7e73ad4c-d7f4-4b1e-ab88-765fbedf2869.jpg",
+      "position": 230,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 98,
+    "fields": {
+      "photo": "room_photo/9ccb13a9-3d34-41a2-b193-9365c99b311a.jpg",
+      "position": 231,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 99,
+    "fields": {
+      "photo": "room_photo/045a4398-4ef6-49d9-8856-17ea593c6907.jpg",
+      "position": 232,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 100,
+    "fields": {
+      "photo": "room_photo/dc79fb3e-809f-40a9-bab6-a39a0cd58acf.jpg",
+      "position": 233,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 101,
+    "fields": {
+      "photo": "room_photo/31f1f4ba-52aa-4245-b1f3-c7789bf18453.jpg",
+      "position": 234,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 102,
+    "fields": {
+      "photo": "room_photo/11480d42-6a15-4434-9372-ba4752e1e989.jpg",
+      "position": 235,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 103,
+    "fields": {
+      "photo": "room_photo/0d935a1e-ed5e-42da-815d-043401ef9ae9.jpg",
+      "position": 237,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 104,
+    "fields": {
+      "photo": "room_photo/dbae0c8b-625b-4208-8a4f-4df471942d87.jpg",
+      "position": 238,
+      "room": 18,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 105,
+    "fields": {
+      "photo": "room_photo/2a85e09a-6b32-4d55-bab0-d263381a8df2.jpg",
+      "position": 240,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 106,
+    "fields": {
+      "photo": "room_photo/3800c6d4-a8d4-4894-8d36-64041ca60304.jpg",
+      "position": 241,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 107,
+    "fields": {
+      "photo": "room_photo/4b187b73-9659-466f-ab16-52c6cbaa8fc0.jpg",
+      "position": 242,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 108,
+    "fields": {
+      "photo": "room_photo/79a9327f-4d27-4339-ac70-51185017ff75.jpg",
+      "position": 243,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 109,
+    "fields": {
+      "photo": "room_photo/3045e8bd-621b-4d63-b450-6ce6996e32a2.jpg",
+      "position": 244,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 110,
+    "fields": {
+      "photo": "room_photo/bc51d01f-46dd-477d-a3c2-4fbbd848f55f.jpg",
+      "position": 245,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 111,
+    "fields": {
+      "photo": "room_photo/0844552d-df2d-4b93-897f-7d3fe03d3e4d.jpg",
+      "position": 246,
+      "room": 19,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 112,
+    "fields": {
+      "photo": "room_photo/030d4eb2-bd09-4dcb-bfc8-c8629355de33.jpg",
+      "position": 150,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 113,
+    "fields": {
+      "photo": "room_photo/b1118a28-3f96-4d5d-b4ba-5412bf742bc0.jpg",
+      "position": 151,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 114,
+    "fields": {
+      "photo": "room_photo/3b99a401-0415-442f-87ab-e094d96fa4d5.jpg",
+      "position": 152,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 115,
+    "fields": {
+      "photo": "room_photo/f737eea3-1bcf-46eb-8912-13c959c92723.jpg",
+      "position": 153,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 116,
+    "fields": {
+      "photo": "room_photo/feac5b81-1a64-48f5-8b47-727e6016e415.jpg",
+      "position": 154,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 117,
+    "fields": {
+      "photo": "room_photo/5ad9a132-ba13-4813-bd96-4d6b5b67cb4e.jpg",
+      "position": 155,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.roomphoto",
+    "pk": 118,
+    "fields": {
+      "photo": "room_photo/a5e71312-daa4-4ca5-a3e7-d14b2c315742.jpg",
+      "position": 156,
+      "room": 20,
+      "desc": ""
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 10,
+    "fields": {
+      "photo": "gallery/IMG_0951_VH1IjJ3.JPG",
+      "desc": "",
+      "inn_short_desc": "небо_хмари_контрасти",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 11,
+    "fields": {
+      "photo": "gallery/IMG_1014_2fjeEAP.JPG",
+      "desc": "",
+      "inn_short_desc": "пагорб_зелень",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 12,
+    "fields": {
+      "photo": "gallery/IMG_1019_mDXmPkZ.JPG",
+      "desc": "",
+      "inn_short_desc": "доріжка",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 13,
+    "fields": {
+      "photo": "gallery/IMG_1035_NbAPInr.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 14,
+    "fields": {
+      "photo": "gallery/IMG_1087_3uyRbiL.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 15,
+    "fields": {
+      "photo": "gallery/IMG_1124_YOPptiD.JPG",
+      "desc": "",
+      "inn_short_desc": "гілки_обрис_гірського_хребта",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 16,
+    "fields": {
+      "photo": "gallery/IMG_1129_DkhFiyP.JPG",
+      "desc": "",
+      "inn_short_desc": "цвіт_яблуні",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 17,
+    "fields": {
+      "photo": "gallery/IMG_1143_uKAuW1s.JPG",
+      "desc": "",
+      "inn_short_desc": "при_дорозі_після_дощу",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 18,
+    "fields": {
+      "photo": "gallery/IMG_1263_HqYwdL9.JPG",
+      "desc": "",
+      "inn_short_desc": "буденне_життя_Східниці",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 19,
+    "fields": {
+      "photo": "gallery/IMG_1289_IeSm9qR.JPG",
+      "desc": "",
+      "inn_short_desc": "цвіт_небо",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 20,
+    "fields": {
+      "photo": "gallery/IMG_1552_4VWWTAp.JPG",
+      "desc": "",
+      "inn_short_desc": "доріжка",
+      "season": 2,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 21,
+    "fields": {
+      "photo": "gallery/IMG_4964_HuZ8y7C.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 1,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 22,
+    "fields": {
+      "photo": "gallery/IMG_4981_bCVg3I8.JPG",
+      "desc": "",
+      "inn_short_desc": "дорога_на_3_джерело",
+      "season": 1,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 23,
+    "fields": {
+      "photo": "gallery/IMG_5005_HHOUvOB.JPG",
+      "desc": "",
+      "inn_short_desc": "краєвид_на_гору",
+      "season": 1,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 24,
+    "fields": {
+      "photo": "gallery/IMG_7241_8YKjcBp.JPG",
+      "desc": "",
+      "inn_short_desc": "дорога",
+      "season": 1,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 25,
+    "fields": {
+      "photo": "gallery/IMG_7535_2MevC9T.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 1,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 26,
+    "fields": {
+      "photo": "gallery/IMG_5105_wl23YhS.JPG",
+      "desc": "",
+      "inn_short_desc": "гірські_хребти",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 27,
+    "fields": {
+      "photo": "gallery/IMG_5285_Br9z0yz.JPG",
+      "desc": "",
+      "inn_short_desc": "квіти_сонце",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 28,
+    "fields": {
+      "photo": "gallery/IMG_5303_UiP9IuP.JPG",
+      "desc": "",
+      "inn_short_desc": "квіти_сонце",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 29,
+    "fields": {
+      "photo": "gallery/IMG_5328_xXRKlTR.JPG",
+      "desc": "",
+      "inn_short_desc": "дорога_небо",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 30,
+    "fields": {
+      "photo": "gallery/IMG_5675_VIMQv3Z.JPG",
+      "desc": "",
+      "inn_short_desc": "пташка_в_лісі",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 31,
+    "fields": {
+      "photo": "gallery/IMG_5681_8tT1hKA.JPG",
+      "desc": "",
+      "inn_short_desc": "діти_білочка",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 32,
+    "fields": {
+      "photo": "gallery/IMG_5691_MIgATXw.JPG",
+      "desc": "",
+      "inn_short_desc": "квіти_ліс",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 33,
+    "fields": {
+      "photo": "gallery/IMG_5729_WyJfqeq.JPG",
+      "desc": "",
+      "inn_short_desc": "дорога_на_3_джерело",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 34,
+    "fields": {
+      "photo": "gallery/IMG_5753_hEslOns.JPG",
+      "desc": "",
+      "inn_short_desc": "дощ",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 35,
+    "fields": {
+      "photo": "gallery/IMG_5760_I1yieHk.JPG",
+      "desc": "",
+      "inn_short_desc": "гірський_хребет",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 36,
+    "fields": {
+      "photo": "gallery/IMG_7393_ubD2MV4.JPG",
+      "desc": "",
+      "inn_short_desc": "краєвид_Східниця",
+      "season": 3,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 37,
+    "fields": {
+      "photo": "gallery/IMG_2260_KqDVNxz.JPG",
+      "desc": "",
+      "inn_short_desc": "хатинка",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 38,
+    "fields": {
+      "photo": "gallery/IMG_2285_KdIve2h.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 39,
+    "fields": {
+      "photo": "gallery/IMG_2290_fLIOZ3R.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 40,
+    "fields": {
+      "photo": "gallery/IMG_2311_6ozIGKZ.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 41,
+    "fields": {
+      "photo": "gallery/IMG_2321_k0p0Sw8.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс_верхів'я",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 42,
+    "fields": {
+      "photo": "gallery/IMG_2327_ZMyHG8C.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 43,
+    "fields": {
+      "photo": "gallery/IMG_2420_t4bSzXY.JPG",
+      "desc": "",
+      "inn_short_desc": "небо_хмари_контрасти",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 44,
+    "fields": {
+      "photo": "gallery/IMG_2422_85T41eC.JPG",
+      "desc": "",
+      "inn_short_desc": "небо_сонце_хмари_контрасти",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 45,
+    "fields": {
+      "photo": "gallery/IMG_2447_2VqXiCa.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс_гора",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 46,
+    "fields": {
+      "photo": "gallery/IMG_5210_shlyUgf.JPG",
+      "desc": "",
+      "inn_short_desc": "дорога",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 47,
+    "fields": {
+      "photo": "gallery/IMG_5218_z6jQPHU.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.gallery",
+    "pk": 48,
+    "fields": {
+      "photo": "gallery/IMG_5225_k5lvAKt.JPG",
+      "desc": "",
+      "inn_short_desc": "ліс",
+      "season": 4,
+      "is_visible": true
+    }
+  },
+  {
+    "model": "main_page.about",
+    "pk": 1,
+    "fields": {
+      "title": "",
+      "sup_desc": "",
+      "point_text_1": "Розташовуємося в самому серці Східниці",
+      "point_text_2": "Пропонуємо бюджетне проживання в затишних комфортних номерах",
+      "point_text_3": "Поруч усе необхідне: ринок, супермаркети та крамниці, кафе, кав'ярні",
+      "point_text_4": "Повз садибу протікає річка, де можна погодувати качок",
+      "point_text_5": "",
+      "inf_desc": "Ласкаво просимо!",
+      "is_visible": true,
+      "photo": "about/11232077m.jpg"
+    }
+  },
+  {
+    "model": "main_page.contacts",
+    "pk": 1,
+    "fields": {
+      "title": "Наші контакти",
+      "sub_title": "садиба «Леонтія»",
+      "phone_title": "Телефон",
+      "phone": "0984046578",
+      "phone_add": "",
+      "address_title": "Адреса",
+      "address": "смт Східниця, вул. Зарічна 37а",
+      "email_title": "Email",
+      "email": "olexakljus@gmail.com",
+      "email_add": "",
+      "socials": "",
+      "add_information": "",
+      "open_hours_title": "Працюємо",
+      "open_days_1": "Пн-Сб",
+      "open_hours_1": "11:00-18:00",
+      "open_days_2": "Нд",
+      "open_hours_2": "11:00-15:00",
+      "day_off_title": "",
+      "day_off": ""
+    }
+  },
+  {
+    "model": "account.userprofile",
+    "pk": 1,
+    "fields": {
+      "user": 2,
+      "phone": "0984045656"
+    }
+  },
+  {
+    "model": "account.userprofile",
+    "pk": 2,
+    "fields": {
+      "user": 3,
+      "phone": ""
+    }
+  },
+  {
+    "model": "account.userprofile",
+    "pk": 3,
+    "fields": {
+      "user": 4,
+      "phone": ""
+    }
+  }
+]
