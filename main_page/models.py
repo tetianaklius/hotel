@@ -5,6 +5,14 @@ from django.core.validators import RegexValidator
 from django.db import models
 
 
+def directory_path(instance, filename):
+    return 'rooms_img/room_{0}/{1}'.format(instance.inn_number, filename)
+
+
+def directory_path_img(instance, filename):
+    return 'rooms_img/room_{0}/{1}'.format(instance.room.inn_number, filename)
+
+
 class CategoryRoom(models.Model):
     """
     This class contains categories of rooms (instances of class Room) and are
@@ -56,7 +64,8 @@ class Room(models.Model):
 
     special_offer = models.BooleanField(default=False)
     category = models.ForeignKey(CategoryRoom, on_delete=models.CASCADE, related_name="rooms")
-    title_photo = models.ImageField(upload_to="title_photo", blank=False)
+    title_photo = models.ImageField(upload_to=directory_path, blank=True, default='')
+
     inn_number = models.SmallIntegerField(blank=True, default=1)
 
     for_single = models.BooleanField(default=False)
@@ -76,13 +85,16 @@ class RoomPhoto(models.Model):
     position (position).
     """
 
-    def get_file_name(self, file_name: str):
-        """This method helps to create a new image file name with the given file extension."""
-        ext = file_name.strip().split(".")[-1]
-        file_name = f"{uuid.uuid4()}.{ext}"
-        return os.path.join("room_photo", file_name)
+    # def get_file_name(self, file_name: str):
+    #     """This method helps to create a new image file name with the given file extension."""
+    #     ext = file_name.strip().split(".")[-1]
+    #     file_name = f"{uuid.uuid4()}.{ext}"
+    #     return os.path.join("room_photo", file_name)
 
-    photo = models.ImageField(upload_to=get_file_name, blank=False)
+    # photo = models.ImageField(upload_to=get_file_name, blank=False)
+
+    photo = models.ImageField(upload_to=directory_path_img)
+
     position = models.SmallIntegerField(unique=True)
     room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room_photo")
     desc = models.TextField(max_length=250, blank=True)
