@@ -17,12 +17,22 @@
                             <a href="{% url "main_page:update_reservation" pk=item.pk %}">
                                 <button type="button" class="btn btn-primary">Опрацьовано</button>
                             </a>
+                            <div style="font-size: small">{{ item.date|date:"d-m-Y" }}</div>
                         </div>
                         <div class="col-md-3"><b>{{ item.name }}</b> {{ item.last_name }}</div>
                         <div class="col-md-3">{{ item.phone }}</div>
-                        <div class="col-md-3">осіб: <b>{{ item.persons }}</b>; номер(id): {{ item.room_id }};
-                            ціна: {{ item.room_price }}<i> "{{ item.message }}"</i></div>
-                        <div style="font-size: small">{{ item.date|date:"d-m-Y" }}</div>
+                        <div class="col-md-3"><b>осіб: {{ item.persons }}</b>;
+                            <p><b>номер: {{ item.room.inn_number }}</b>;
+                            <br>{{ item.room.title }} <i style="color: lightslategray"> (id={{ item.room_id }})</i>
+                            <br>стандартна ціна: {{ item.room.price }}
+                            <br>для 1 особи: {{ item.room.price_1person }}
+                            <br>для 2-х: {{ item.room.price_2person }}
+                            <br>для 3-х: {{ item.room.price_3person }}
+                            <br>1 поверх: {{ item.room.first_floor }}
+                            <br>тварини: {{ item.room.with_pets }}, {{ item.room.price_pets }}</p>
+                            <p><b>--></b><i>"{{ item.message }}"</i></p>
+                            ——————————————
+                        </div>
                     </div>
                 {% endfor %}
             </div>

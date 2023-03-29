@@ -188,4 +188,6 @@ def list_reservations(request):
     messages = Reservation.objects.filter(is_processed=False)  # users unprocessed requests of reservations
 
     return render(request, "list_reservations.html",
-                  context={"reservations": messages, })
+                  context={"reservations": messages,
+                           }
+                  )
