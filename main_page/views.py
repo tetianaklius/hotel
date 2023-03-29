@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
@@ -131,7 +132,10 @@ def reservation(request, room_id: int):
                 room_price=Room.objects.get(id=room_id).price
             )
             reservation_instance.save()
-            return HttpResponseRedirect(reverse("main_page:main_path"))
+            messages.success(request, 'Ваш запит надісланий!')
+
+            return HttpResponseRedirect(reverse("account:message_view"))
+            # return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
         room_price = Room.objects.get(id=room_id).price
@@ -189,3 +193,4 @@ def list_reservations(request):
 
     return render(request, "list_reservations.html",
                   context={"reservations": messages, })
+

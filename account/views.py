@@ -71,3 +71,5 @@ def profile_view(request):
     return render(request, "profile.html", context)
 
 
+def message_view(request):
+    return render(request, "message.html", context={})
