@@ -132,7 +132,7 @@ def reservation(request, room_id: int):
             )
             reservation_instance.save()
 
-            messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
