@@ -3,11 +3,11 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from tkinter import messagebox
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
-
 
 User = get_user_model()
 
@@ -131,6 +131,8 @@ def reservation(request, room_id: int):
                 room_price=Room.objects.get(id=room_id).price
             )
             reservation_instance.save()
+
+            messagebox.showinfo("Бронювання","Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
