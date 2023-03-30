@@ -190,7 +190,7 @@ class Reservation(models.Model):
     This class contains fields needed to send request of room reservation by the user and save this information
     (for future processing by manager). There is input information about user who want to reserve room
     (name, last name, phone, email), additional input information from user (message, quantity of persons is needed),
-    some internal information: room id, room price, user id, date of request from user (date),
+    some internal information: room to be reserved (room), user id, date of request from user (date),
     date of processing by the manager (date_processing) and state of processing (is_processed: yes or not).
     """
     phone_validator = RegexValidator(regex=r"^\+?3?8?0\d{2}[- ]?(\d[- ]?){7}$", message="Помилка в номері телефону")
@@ -203,7 +203,7 @@ class Reservation(models.Model):
     persons = models.IntegerField(null=True, blank=True, default=2)
     message = models.TextField(max_length=250, blank=True)
 
-    room_id = models.IntegerField(null=True, blank=True)
+    room = models.ForeignKey(Room, on_delete=models.CASCADE, related_name="room", default=1)
     room_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     user_id = models.IntegerField(null=True, blank=True)
 
