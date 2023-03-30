@@ -132,7 +132,8 @@ def reservation(request, room_id: int):
             )
             reservation_instance.save()
 
-            messagebox.showinfo("Бронювання","Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
@@ -143,7 +144,9 @@ def reservation(request, room_id: int):
         last_name = user.last_name if user.is_authenticated else None
         user_id = request.user.id if user.is_authenticated else None
         user_email = request.user.email if user.is_authenticated else None
-        user_phone = UserProfile.objects.filter(user=user).first().phone if user.is_authenticated else None
+
+        user_profile = UserProfile.objects.filter(user=user).first() if user.is_authenticated else None
+        user_phone = user_profile.phone if user_profile else None
 
         form = RoomReservationForm(initial={
             'room_id': room_id,
