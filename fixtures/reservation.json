@@ -1,1 +1,72 @@
-[{"model": "main_page.reservation", "pk": 1, "fields": {"name": "Тетяна", "last_name": "Клюс", "phone": "0660971767", "persons": 2, "message": "", "date": "2023-03-09", "date_processing": "2023-03-09", "is_processed": false}}, {"model": "main_page.reservation", "pk": 2, "fields": {"name": "Тетяна", "last_name": "Клюс", "phone": "0660971767", "persons": 2, "message": "", "date": "2023-03-09", "date_processing": "2023-03-09", "is_processed": false}}, {"model": "main_page.reservation", "pk": 3, "fields": {"name": "Tetiana", "last_name": "K", "phone": "0660971767", "persons": 2, "message": "gfnfxfg", "date": "2023-03-09", "date_processing": "2023-03-09", "is_processed": false}}, {"model": "main_page.reservation", "pk": 4, "fields": {"name": "T", "last_name": "K", "phone": "0660971767", "persons": 3, "message": "мррлрплрлпл", "date": "2023-03-09", "date_processing": "2023-03-09", "is_processed": false}}, {"model": "main_page.reservation", "pk": 5, "fields": {"name": "Olha", "last_name": "", "phone": "0876758374", "persons": 4, "message": "", "date": "2023-03-09", "date_processing": "2023-03-09", "is_processed": false}}]
+[
+{
+  "model": "main_page.reservation",
+  "pk": 1,
+  "fields": {
+    "name": "Тетяна",
+    "last_name": "Клюс",
+    "phone": "0660971767",
+    "persons": 2,
+    "message": "",
+    "date": "2023-03-09",
+    "date_processing": "2023-03-09",
+    "is_processed": false
+  }
+},
+{
+  "model": "main_page.reservation",
+  "pk": 2,
+  "fields": {
+    "name": "Тетяна",
+    "last_name": "Клюс",
+    "phone": "0660971767",
+    "persons": 2,
+    "message": "",
+    "date": "2023-03-09",
+    "date_processing": "2023-03-09",
+    "is_processed": false
+  }
+},
+{
+  "model": "main_page.reservation",
+  "pk": 3,
+  "fields": {
+    "name": "Tetiana",
+    "last_name": "K",
+    "phone": "0660971767",
+    "persons": 2,
+    "message": "gfnfxfg",
+    "date": "2023-03-09",
+    "date_processing": "2023-03-09",
+    "is_processed": false
+  }
+},
+{
+  "model": "main_page.reservation",
+  "pk": 4,
+  "fields": {
+    "name": "T",
+    "last_name": "K",
+    "phone": "0660971767",
+    "persons": 3,
+    "message": "мррлрплрлпл",
+    "date": "2023-03-09",
+    "date_processing": "2023-03-09",
+    "is_processed": false
+  }
+},
+{
+  "model": "main_page.reservation",
+  "pk": 5,
+  "fields": {
+    "name": "Olha",
+    "last_name": "",
+    "phone": "0876758374",
+    "persons": 4,
+    "message": "",
+    "date": "2023-03-09",
+    "date_processing": "2023-03-09",
+    "is_processed": false
+  }
+}
+]
