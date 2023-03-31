@@ -140,8 +140,8 @@ def reservation(request, room_id: int):
             bot = telebot.TeleBot(TOKEN)
             bot.send_message(
                 "703984335",
-                f'Бронювання {cd["room_id"]} номер {cd["persons"]} особи,'
-                f' ціна {room_price} {cd["message"]} для {cd["name"]} {cd["phone"]}'
+                f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
+                f' ціна {room_price} {cd["message"]} '
             )
 
             # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
