@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from tkinter import messagebox
+# from tkinter import messagebox
+import telebot
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
@@ -117,6 +118,7 @@ def reservation(request, room_id: int):
     :return: render (HttpResponse).
     """
     user = request.user
+    # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
@@ -133,6 +135,7 @@ def reservation(request, room_id: int):
             reservation_instance.save()
 
             # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
