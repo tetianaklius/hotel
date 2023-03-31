@@ -11,6 +11,7 @@ from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
 
 User = get_user_model()
+TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
 
 
 def is_manager(user):
@@ -123,19 +124,27 @@ def reservation(request, room_id: int):
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
+            cd = form.cleaned_data
+            room_price = Room.objects.get(id=room_id).price
             reservation_instance = Reservation(
-                name=form.cleaned_data["name"],
+                name=cd["name"],
                 user_id=request.user.id,
-                room_id=form.cleaned_data["room_id"],
-                message=form.cleaned_data["message"],
-                phone=form.cleaned_data["phone"],
-                persons=form.cleaned_data["persons"],
-                room_price=Room.objects.get(id=room_id).price
+                room_id=cd["room_id"],
+                message=cd["message"],
+                phone=cd["phone"],
+                persons=cd["persons"],
+                room_price=room_price
             )
             reservation_instance.save()
 
-            # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            bot = telebot.TeleBot(TOKEN)
+            bot.send_message(
+                "703984335",
+                f'Бронювання {cd["room_id"]} номер {cd["persons"]} особи,'
+                f' ціна {room_price} {cd["message"]} для {cd["name"]} {cd["phone"]}'
+            )
 
+            # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
