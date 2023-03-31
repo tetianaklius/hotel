@@ -119,7 +119,6 @@ def reservation(request, room_id: int):
     :return: render (HttpResponse).
     """
     user = request.user
-    # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
@@ -137,6 +136,7 @@ def reservation(request, room_id: int):
             )
             reservation_instance.save()
 
+            # повідомляємо персонал про нове бронювання
             bot = telebot.TeleBot(TOKEN)
             bot.send_message(
                 "703984335",
