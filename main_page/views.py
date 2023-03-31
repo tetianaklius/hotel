@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-# from tkinter import messagebox
+
+from tkinter import messagebox
 import telebot
 
 from account.models import UserProfile
@@ -124,11 +125,22 @@ def reservation(request, room_id: int):
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            room_price = Room.objects.get(id=room_id).price
+            room = Room.objects.get(id=room_id)  # extract the room object to have access to all its attributes
+            room_number = room.inn_number
+            # price depends on quantity of persons (according to price policy; look at room_selection function)
+            if cd["persons"] == 1:
+                room_price = room.price_1person
+            elif cd["persons"] == 2:
+                room_price = room.price_2person or room.price
+            elif cd["persons"] == 3:
+                room_price = room.price_3person or room.price
+            else:
+                room_price = room.price
             reservation_instance = Reservation(
                 name=cd["name"],
                 user_id=request.user.id,
                 room_id=cd["room_id"],
+                # room_number=room_number,
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
@@ -136,15 +148,15 @@ def reservation(request, room_id: int):
             )
             reservation_instance.save()
 
-            # повідомляємо персонал про нове бронювання
+            # informing the staff about the new reservation request
             bot = telebot.TeleBot(TOKEN)
             bot.send_message(
                 "703984335",
-                f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
-                f' ціна {room_price} {cd["message"]} '
+                f'{cd["phone"]} | Бронювання: {cd["name"]}; {room_number} номер; {cd["persons"]} особ(и/а);'
+                f' ціна {room_price} || «{cd["message"]}»'
             )
 
-            # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
