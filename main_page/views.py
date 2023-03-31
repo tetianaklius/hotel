@@ -169,6 +169,9 @@ def reservation(request, room_id: int):
             y_coordinate = int((screen_height / 2) - (window_height / 2))
             window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
 
+            window.resizable(False, False)  # to make the window with a fixed size
+            window.attributes('-topmost', 1)  # to put window at the top of the stacking order
+
             def close_win():
                 window.destroy()
 
