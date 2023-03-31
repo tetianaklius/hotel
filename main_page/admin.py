@@ -32,7 +32,7 @@ class AdminGallery(admin.ModelAdmin):
     """Class that allows to manage and display in admin panel all instances of the category Gallery"""
     model = Gallery
     list_filter = ["season", "is_visible"]
-    list_display = ["inn_short_desc", "season", "is_visible"]
+    list_display = ["inn_short_desc", "season", "photo", "is_visible"]
     list_editable = ["is_visible"]
 
 
@@ -54,4 +54,3 @@ class AdminReservation(admin.ModelAdmin):
     model = Reservation
     list_display = ["name", "phone", "persons", "is_processed"]
     list_filter = ["persons", "is_processed", "date"]
-
