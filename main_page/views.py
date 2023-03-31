@@ -143,11 +143,11 @@ def reservation(request, room_id: int):
                 f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
                 f' ціна {room_price} {cd["message"]} '
             )
-            bot.send_message(
-                "391718019",
-                f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
-                f' ціна {room_price} {cd["message"]} '
-            )
+            # bot.send_message(
+            #     "391718019",
+            #     f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
+            #     f' ціна {room_price} {cd["message"]} '
+            # )
 
             # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
 
