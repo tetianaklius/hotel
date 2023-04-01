@@ -3,7 +3,8 @@ from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
-# from tkinter import messagebox
+
+import tkinter as tk
 import telebot
 
 from account.models import UserProfile
@@ -124,11 +125,22 @@ def reservation(request, room_id: int):
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            room_price = Room.objects.get(id=room_id).price
+            room = Room.objects.get(id=room_id)  # extract the room object to have access to all its attributes
+            room_number = room.inn_number
+            # price depends on quantity of persons (according to price policy; look at room_selection function)
+            if cd["persons"] == 1:
+                room_price = room.price_1person
+            elif cd["persons"] == 2:
+                room_price = room.price_2person or room.price
+            elif cd["persons"] == 3:
+                room_price = room.price_3person or room.price
+            else:
+                room_price = room.price
             reservation_instance = Reservation(
                 name=cd["name"],
                 user_id=request.user.id,
                 room_id=cd["room_id"],
+                # room_number=room_number,
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
@@ -136,20 +148,48 @@ def reservation(request, room_id: int):
             )
             reservation_instance.save()
 
-            # повідомляємо персонал про нове бронювання
+            # informing the staff about the new reservation request
             bot = telebot.TeleBot(TOKEN)
             bot.send_message(
                 "703984335",
-                f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
-                f' ціна {room_price} {cd["message"]} '
+                f'{cd["phone"]} | Бронювання: {cd["name"]}; {room_number} номер; {cd["persons"]} особ(и/а);'
+                f' ціна {room_price} || «{cd["message"]}»'
             )
-            # bot.send_message(
-            #     "391718019",
-            #     f'{cd["phone"]} : Бронювання: {cd["name"]} {cd["room_id"]} номер {cd["persons"]} особи,'
-            #     f' ціна {room_price} {cd["message"]} '
-            # )
 
-            # messagebox.showinfo("Бронювання", "Інформація надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            ######################################################################################################
+            # tkinter message window
+            window = tk.Tk()
+
+            # window geometry
+            window_height = 250
+            window_width = 450
+            screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
+            screen_height = window.winfo_screenheight()  # gets the value of the height of the user`s screen
+            x_coordinate = int((screen_width / 2) - (window_width / 2))
+            y_coordinate = int((screen_height / 2) - (window_height / 2))
+            window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
+
+            window.resizable(False, False)  # to make the window with a fixed size
+            window.attributes('-topmost', 1)  # to put window at the top of the stacking order
+
+            def close_win():
+                window.destroy()
+
+            window.title("Садиба «Леонтія»")
+            label = tk.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
+                                          "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14), fg="#483D8B"
+                             )
+            label.pack(padx=20, pady=30)
+
+            button = tk.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
+                               background="#483D8B"
+                               )
+            button.pack(pady=20)
+
+            window.mainloop()
+
+            # messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            ######################################################################################################
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
