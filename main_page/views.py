@@ -1,4 +1,4 @@
-import tkinter
+# import tkinter
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
