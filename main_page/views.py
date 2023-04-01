@@ -9,7 +9,7 @@ from django.urls import reverse
 # import tkinter as tk
 import telebot
 
-from tkinter import *
+# from tkinter import *
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
