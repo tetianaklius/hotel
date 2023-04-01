@@ -1,11 +1,15 @@
+import tkinter
+
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-import tkinter as tk
+# import tkinter as tk
 import telebot
+
+from tkinter import *
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
@@ -158,7 +162,7 @@ def reservation(request, room_id: int):
 
             ######################################################################################################
             # tkinter message window
-            window = tk.Tk()
+            window = tkinter.Tk()
 
             # window geometry
             window_height = 250
@@ -176,12 +180,12 @@ def reservation(request, room_id: int):
                 window.destroy()
 
             window.title("Садиба «Леонтія»")
-            label = tk.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
+            label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
                                           "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14), fg="#483D8B"
                              )
             label.pack(padx=20, pady=30)
 
-            button = tk.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
+            button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
                                background="#483D8B"
                                )
             button.pack(pady=20)
