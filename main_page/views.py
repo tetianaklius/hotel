@@ -1,4 +1,4 @@
-# import tkinter
+import tkinter
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
@@ -6,10 +6,12 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
+# import tkinter
 # import tkinter as tk
+from tkinter import *
+
 import telebot
 
-# from tkinter import *
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
@@ -162,7 +164,7 @@ def reservation(request, room_id: int):
 
             ######################################################################################################
             # tkinter message window
-            # window = tkinter.Tk()
+            window = tkinter.Tk()
             #
             # # window geometry
             # window_height = 250
