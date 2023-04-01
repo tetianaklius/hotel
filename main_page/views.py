@@ -8,7 +8,7 @@ from django.urls import reverse
 
 # import tkinter
 # import tkinter as tk
-from tkinter import *
+# from tkinter import *
 
 import telebot
 
@@ -163,38 +163,38 @@ def reservation(request, room_id: int):
             )
 
             ######################################################################################################
-            # tkinter message window
-            window = tkinter.Tk()
+            # # tkinter message window
+            # window = tkinter.Tk()
             #
             # # window geometry
-            window_height = 250
-            window_width = 450
-            screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
-            screen_height = window.winfo_screenheight()  # gets the value of the height of the user`s screen
-            x_coordinate = int((screen_width / 2) - (window_width / 2))
-            y_coordinate = int((screen_height / 2) - (window_height / 2))
-            window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
-
-            window.resizable(False, False)  # to make the window with a fixed size
-            window.attributes('-topmost', 1)  # to put window at the top of the stacking order
-
-            def close_win():
-                window.destroy()
-
-            window.title("Садиба «Леонтія»")
-            label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
-                                          "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14), fg="#483D8B"
-                             )
-            label.pack(padx=20, pady=30)
-
-            button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
-                               background="#483D8B"
-                               )
-            button.pack(pady=20)
-
-            window.mainloop()
-
-            # messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
+            # window_height = 250
+            # window_width = 450
+            # screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
+            # screen_height = window.winfo_screenheight()  # gets the value of the height of the user`s screen
+            # x_coordinate = int((screen_width / 2) - (window_width / 2))
+            # y_coordinate = int((screen_height / 2) - (window_height / 2))
+            # window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
+            #
+            # window.resizable(False, False)  # to make the window with a fixed size
+            # window.attributes('-topmost', 1)  # to put window at the top of the stacking order
+            #
+            # def close_win():
+            #     window.destroy()
+            #
+            # window.title("Садиба «Леонтія»")
+            # label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
+            #                               "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14), fg="#483D8B"
+            #                  )
+            # label.pack(padx=20, pady=30)
+            #
+            # button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
+            #                    background="#483D8B"
+            #                    )
+            # button.pack(pady=20)
+            #
+            # window.mainloop()
+            #
+            # # messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
             ######################################################################################################
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
