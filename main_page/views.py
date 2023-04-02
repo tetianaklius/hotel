@@ -8,10 +8,11 @@ from django.urls import reverse
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
-
+import math
 
 User = get_user_model()
 TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
+e = math.e
 
 
 def is_manager(user):
