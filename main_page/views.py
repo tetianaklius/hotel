@@ -1,5 +1,4 @@
 import telebot
-
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
@@ -10,7 +9,6 @@ from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
 
-# from tkinter import *
 
 User = get_user_model()
 TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
@@ -141,7 +139,6 @@ def reservation(request, room_id: int):
                 name=cd["name"],
                 user_id=request.user.id,
                 room_id=cd["room_id"],
-                # room_number=room_number,
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
