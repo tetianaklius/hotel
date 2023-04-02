@@ -7,8 +7,8 @@ from django.urls import reverse
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
+from .main_page import romms_actual_price
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
-
 
 User = get_user_model()
 TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
@@ -54,43 +54,13 @@ def room_selection(request, category_persons: int = None):
         (room category is an instance of the class CategoryRoom).
     :return: render html page with filtered rooms with actual prices (according to price policy).
     """
-    if category_persons:  # if some category is selected by user
-        if category_persons == 1:
-            rooms_show = Room.objects.filter(is_visible=True, for_single=True)  # filtered rooms by "for_single" value
-            for item in rooms_show:
-                if item.price_1person:  # if price for 1 person for this room is exist (is filled)
-                    item.price = item.price_1person  # usual price of the room is replaced by price for 1 person
-                    item.price_comment = "(ціна за номер для проживання 1 особи)"  # comment to the new price
 
-        elif category_persons == 2:  # there will be filtered rooms with this or greater persons quantity
-            rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
-            for item in rooms_show:
-                if item.price_2person:  # if price for 2 persons for this room is exist (is filled)
-                    item.price = item.price_2person  # usual price of the room is replaced
-                    item.price_comment = "(ціна за номер для проживання 2-х осіб)"  # comment to the new price
+    rooms = Room.objects.filter(is_visible=True)
+    if category_persons:
+        rooms = romms_actual_price(category_persons, rooms)
 
-        elif category_persons == 3:
-            rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
-            for item in rooms_show:
-                if item.price_3person:  # if price for 3 persons for this room is exist (is filled)
-                    item.price = item.price_3person  # usual price of the room is replaced
-                    item.price_comment = "(ціна за номер для проживання 3-х осіб)"  # comment to the new price
-
-        elif category_persons == 4:
-            rooms_show = Room.objects.filter(is_visible=True, persons__gte=category_persons)
-
-        elif category_persons == 10:
-            rooms_show = Room.objects.filter(is_visible=True, with_pets=True)  # filtered rooms by "with_pets" value
-            for item in rooms_show:
-                if item.price_pets:  # if price for living with pets for this room is exist (is filled)
-                    item.price = item.price_pets  # usual price of the room is replaced
-                    item.price_comment = "(ціна за номер для проживання з домашніми улюбленцями)"  # price comment
-        else:
-            rooms_show = Room.objects.filter(is_visible=True)
-    else:  # if category is not selected by user
-        rooms_show = Room.objects.filter(is_visible=True)  # there are all visible rooms of the hotel
     return render(request, "rooms.html", context={
-        "rooms": rooms_show,
+        "rooms": rooms,
         "room_category": CategoryRoom.objects.filter(is_visible=True),
     })
 
@@ -153,43 +123,6 @@ def reservation(request, room_id: int):
                 f'{cd["phone"]} | Бронювання: {cd["name"]}; {room_number} номер; {cd["persons"]} особ(и/а);'
                 f' ціна {room_price} || «{cd["message"]}»'
             )
-
-            ######################################################################################################
-            # # tkinter message window
-            # window = tkinter.Tk()
-            #
-            # # window geometry
-            # window_height = 250
-            # window_width = 450
-            # screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
-            # screen_height = window.winfo_screenheight()  # gets the value of the height of the user`s screen
-            # x_coordinate = int((screen_width / 2) - (window_width / 2))
-            # y_coordinate = int((screen_height / 2) - (window_height / 2))
-            # window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
-            #
-            # window.resizable(False, False)  # to make the window with a fixed size
-            # window.attributes('-topmost', 1)  # to put window at the top of the stacking order
-            #
-            # def close_win():
-            #     window.destroy()
-            #
-            # window.title("Садиба «Леонтія»")
-            # label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
-            #                                    "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14),
-            #                       fg="#483D8B"
-            #                       )
-            # label.pack(padx=20, pady=30)
-            #
-            # button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
-            #                         background="#483D8B"
-            #                         )
-            # button.pack(pady=20)
-            #
-            # window.mainloop()
-
-            # messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
-            ######################################################################################################
-
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
