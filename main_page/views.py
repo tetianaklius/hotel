@@ -9,9 +9,9 @@ from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
 
-
 User = get_user_model()
 TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
+
 
 
 def is_manager(user):
@@ -158,8 +158,8 @@ def reservation(request, room_id: int):
             ######################################################################################################
             # # tkinter message window
             # window = tkinter.Tk()
-            #
-            # # window geometry
+            # #
+            # # # window geometry
             # window_height = 250
             # window_width = 450
             # screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
