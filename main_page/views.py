@@ -1,4 +1,4 @@
-import tkinter
+import telebot
 
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
@@ -6,14 +6,11 @@ from django.http import HttpResponseRedirect
 from django.shortcuts import render, redirect
 from django.urls import reverse
 
-# import tkinter as tk
-import telebot
-
-# from tkinter import *
-
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
+
+# from tkinter import *
 
 User = get_user_model()
 TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
@@ -181,13 +178,14 @@ def reservation(request, room_id: int):
 
             window.title("Садиба «Леонтія»")
             label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
-                                          "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14), fg="#483D8B"
-                             )
+                                               "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14),
+                                  fg="#483D8B"
+                                  )
             label.pack(padx=20, pady=30)
 
             button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
-                               background="#483D8B"
-                               )
+                                    background="#483D8B"
+                                    )
             button.pack(pady=20)
 
             window.mainloop()
