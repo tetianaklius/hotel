@@ -71,14 +71,12 @@
                         <ul>
                             {% if user.is_superuser or "admin" in user.groups.all.0.name %}
                                 <li><a href="{% url "admin:index" %}"><span>Адмін-панель</span></a>
-                                    {% else %}
+                                    {% elif "manager" in user.groups.all.0.name %}
+                                <li><a href="{% url "main_page:list_reservations" %}">Бронювання</a></li>
+
+                            {% else %}
                                 <li><a href="{% url "account:profile" %}">Переглянути профіль</a></li>
                             {% endif %}
-
-                            {% if "manager" in user.groups.all.0.name %}
-                                <li><a href="{% url "main_page:list_reservations" %}">Бронювання</a></li>
-                            {% endif %}
-
 
                             <li><a href="{% url "account:logout_view" %}">Вийти</a></li>
                         </ul>
