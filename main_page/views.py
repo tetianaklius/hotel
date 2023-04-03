@@ -95,27 +95,18 @@ def reservation(request, room_id: int, persons: int):
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            # room = Room.objects.filter(id=room_id)  # extract the room object to have access to all its attributes
-            # price depends on quantity of persons (according to price policy; look at room_selection function)
-            # room_price = romms_actual_price(persons, room).first().price
-            # if cd["persons"] == 1:
-            #     room_price = room.price_1person
-            # elif cd["persons"] == 2:
-            #     room_price = room.price_2person or room.price
-            # elif cd["persons"] == 3:
-            #     room_price = room.price_3person or room.price
-            # else:
-            #     room_price = room.price
+
             reservation_instance = Reservation(
-                name=cd["name"],
                 user_id=request.user.id,
-                room=room.first(),
+                room=room,
+                room_price=room_price,
+                name=cd["name"],
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
-                room_price=room_price
             )
             reservation_instance.save()
+
             # message_telegram(reservation_instance)
 
             return HttpResponseRedirect(reverse("main_page:main_path"))
