@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import main, update_reservation, list_reservations
+from .views import main, update_reservation, list_reservations, message
 
 from .views import room_selection, reservation, room_details
 
@@ -12,6 +12,8 @@ urlpatterns = [
     path("rooms/category/<int:quantity_person>/", room_selection, name="category"),
 
     path("rooms/room/reservation/<int:room_id> <int:persons>/", reservation, name="reservation"),
+    path("reservation/message/", message, name="message"),
+
     path("rooms/room/<int:room_id>/", room_details, name="room_details"),
 
     path("manager/update_reserve/<int:pk>/", update_reservation, name="update_reservation"),

@@ -10,7 +10,7 @@ def message_telegram(reservation):
     bot.send_message(
         "703984335",
         f'{reservation.phone} | Бронювання: {reservation.name} {reservation.room.inn_number} '
-        f'номер; {reservation.person} особ(и/а);'
+        f'номер; {reservation.persons} особ(и/а);'
         f' ціна {reservation.room_price} || «{reservation.message}»'
     )
 

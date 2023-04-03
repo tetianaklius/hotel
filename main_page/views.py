@@ -107,9 +107,9 @@ def reservation(request, room_id: int, persons: int):
             )
             reservation_instance.save()
 
-            # message_telegram(reservation_instance)
+            message_telegram(reservation_instance)
 
-            return HttpResponseRedirect(reverse("main_page:main_path"))
+            return HttpResponseRedirect(reverse("main_page:message"))
 
     else:
         # room_price = room.price
@@ -138,6 +138,10 @@ def reservation(request, room_id: int, persons: int):
         "form": form,
         "room": room,
     })
+
+
+def message(request):
+    return render(request, "message.html")
 
 
 @login_required(login_url="/login/")
