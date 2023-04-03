@@ -6,7 +6,7 @@ from django.urls import reverse
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
-from .main_page import romms_actual_price, message_telegram
+from .main_page import rooms_actual_price, message_telegram
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
 
 User = get_user_model()
@@ -48,14 +48,14 @@ def room_selection(request, quantity_person: int = 2):
     """
     This function helps user to filter rooms by category and implements the price policy of the rooms.
     :param request: WSGIRequest from path function in urlpatterns.
-    :param category_persons: this is value of attribute "persons" of selected room category
+    :param quantity_person: this is value of attribute "persons" of selected room category
         (room category is an instance of the class CategoryRoom).
     :return: render html page with filtered rooms with actual prices (according to price policy).
     """
 
     rooms = Room.objects.filter(is_visible=True)
     if quantity_person:
-        rooms = romms_actual_price(quantity_person, rooms)
+        rooms = rooms_actual_price(quantity_person, rooms)
 
     return render(request, "rooms.html", context={
         "quantity_person": quantity_person,
@@ -85,10 +85,11 @@ def reservation(request, room_id: int, persons: int):
     which allow user to fill and send request of room reservation.
     :param request: WSGIRequest from path function in urlpatterns.
     :param room_id: id of selected room to reserve.
+    :param persons: the number of people who will live in the room.
     :return: render (HttpResponse).
     """
     user = request.user
-    room = romms_actual_price(persons, Room.objects.filter(id=room_id)).first()
+    room = rooms_actual_price(persons, Room.objects.filter(id=room_id)).first()
     room_price = room.price
 
     if request.method == "POST":

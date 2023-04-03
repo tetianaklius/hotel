@@ -16,7 +16,6 @@
                     {% for category in room_category %}
                         <a href="{% url 'main_page:category' category.persons %}"
                            class="list-group-item
-                                {# підсвічуємо активний елемент #}
                            {% if category.persons == quantity_person %} active{% endif %}">{{ category.title }}
                         </a>
                     {% endfor %}
