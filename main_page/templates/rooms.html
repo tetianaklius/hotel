@@ -15,11 +15,27 @@
 
                 <h2 class="my-4">Номери</h2>
                 <div class="list-group">
-                    {% for category in room_category %}
-                        <a href="{% url "main_page:category" category.persons %}" class="list-group-item">
-                            {{ category.title }}
-                        </a>
-                    {% endfor %}
+                    <div class="col-lg-3 mt-4">
+                        <div class="list-group">
+                            {% for category in room_category %}
+                                <a href="{% url 'main_page:category' category.persons %}"
+                                   class="list-group-item
+                                {# підсвічуємо активний елемент #}
+                           {% if category.persons == quantity_person %} active{% endif %}"
+                                >{{ category.title }}
+                                </a>
+                            {% endfor %}
+                        </div>
+                    </div>
+
+
+                    {#                    {% for category in room_category %}#}
+                    {#                        <a href="{% url "main_page:category" category.persons %}" class="list-group-item">#}
+                    {#                            {{ category.title }}#}
+                    {#                        </a>#}
+                    {#                    {% endfor %}#}
+                    {#                #}
+
                 </div>
 
             </div>
@@ -35,7 +51,8 @@
                                          alt="Світлина номера">
                                 </a>
                                 <div class="card-body">
-                                    <h4 class="card-title" style="font-family: SansSerif,sans-serif; font-size: larger;">
+                                    <h4 class="card-title"
+                                        style="font-family: SansSerif,sans-serif; font-size: larger;">
                                         <a>{{ room.title }}</a>
                                     </h4>
                                     <h5 style="text-align: right">{{ room.price }} UAH</h5>
@@ -49,7 +66,7 @@
                                 </div>
                                 <div class="card-footer text-center">
                                     <a class="btn btn-outline-success"
-                                       href="{% url "main_page:reservation" room.id %}">
+                                       href="{% url "main_page:reservation" room.id person_quantity %}">
                                         Забронювати
                                     </a>
                                 </div>

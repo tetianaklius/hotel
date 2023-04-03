@@ -1,4 +1,3 @@
-import telebot
 from django.contrib.auth import get_user_model
 from django.contrib.auth.decorators import user_passes_test, login_required
 from django.http import HttpResponseRedirect
@@ -7,11 +6,10 @@ from django.urls import reverse
 
 from account.models import UserProfile
 from main_page.forms import RoomReservationForm
-from .main_page import romms_actual_price
+from .main_page import romms_actual_price, message_telegram
 from .models import RoomPhoto, Room, Reservation, Gallery, About, Contacts, CategoryRoom
 
 User = get_user_model()
-TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
 
 
 def is_manager(user):
@@ -46,7 +44,7 @@ def main(request):
     })
 
 
-def room_selection(request, category_persons: int = None):
+def room_selection(request, category_persons: int = 2):
     """
     This function helps user to filter rooms by category and implements the price policy of the rooms.
     :param request: WSGIRequest from path function in urlpatterns.
@@ -60,6 +58,7 @@ def room_selection(request, category_persons: int = None):
         rooms = romms_actual_price(category_persons, rooms)
 
     return render(request, "rooms.html", context={
+        "person_quantity": category_persons,
         "rooms": rooms,
         "room_category": CategoryRoom.objects.filter(is_visible=True),
     })
@@ -80,7 +79,7 @@ def room_details(request, room_id: int):
         })
 
 
-def reservation(request, room_id: int):
+def reservation(request, room_id: int, persons: int):
     """
     This function works with form of room reservation and site page with this form,
     which allow user to fill and send request of room reservation.
@@ -89,13 +88,13 @@ def reservation(request, room_id: int):
     :return: render (HttpResponse).
     """
     user = request.user
+    room = Room.objects.get(id=room_id)
 
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
             cd = form.cleaned_data
             room = Room.objects.get(id=room_id)  # extract the room object to have access to all its attributes
-            room_number = room.inn_number
             # price depends on quantity of persons (according to price policy; look at room_selection function)
             if cd["persons"] == 1:
                 room_price = room.price_1person
@@ -108,26 +107,20 @@ def reservation(request, room_id: int):
             reservation_instance = Reservation(
                 name=cd["name"],
                 user_id=request.user.id,
-                room_id=cd["room_id"],
+                room=room,
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
                 room_price=room_price
             )
             reservation_instance.save()
+            # message_telegram(reservation_instance)
 
-            # informing the staff about the new reservation request
-            bot = telebot.TeleBot(TOKEN)
-            bot.send_message(
-                "703984335",
-                f'{cd["phone"]} | Бронювання: {cd["name"]}; {room_number} номер; {cd["persons"]} особ(и/а);'
-                f' ціна {room_price} || «{cd["message"]}»'
-            )
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
-        room_price = Room.objects.get(id=room_id).price
-        persons = Room.objects.get(id=room_id).category.persons
+        room_price = room.price
+        # persons = room.category.persons
 
         name = user.first_name if user.is_authenticated else None
         last_name = user.last_name if user.is_authenticated else None
@@ -139,7 +132,7 @@ def reservation(request, room_id: int):
 
         form = RoomReservationForm(initial={
             'room_id': room_id,
-            'room_price': room_price,
+            'room_price': int(room_price),
             'persons': persons,
             'name': name,
             'last_name': last_name,
@@ -147,8 +140,6 @@ def reservation(request, room_id: int):
             'user_email': user_email,
             'phone': user_phone,
         })
-
-    room = Room.objects.get(id=room_id)
 
     return render(request, "reservation.html", context={
         "form": form,

@@ -1,7 +1,17 @@
-from main_page.models import Room
-
+import telebot
 
 # the logic of the app is written here
+
+def message_telegram(reservation):
+    # informing the staff about the new reservation request
+    TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
+    bot = telebot.TeleBot(TOKEN)
+    bot.send_message(
+        "703984335",
+        f'{reservation.phone} | Бронювання: {reservation.name} {reservation.room.inn_number} '
+        f'номер; {reservation.person} особ(и/а);'
+        f' ціна {reservation.room_price} || «{reservation.message}»'
+    )
 
 def romms_actual_price(persons, rooms):
     if persons == 1:

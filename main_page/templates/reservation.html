@@ -29,7 +29,7 @@
                 {% endif %}
 
                 <h4 class="mt-3 mb-3">Бронювання номера: {{ room.title }}</h4>
-                <form action="{% url "main_page:reservation" room.id %}" method="post" name="reservation_form">
+                <form action="{% url "main_page:reservation" room.id 2 %}" method="post" name="reservation_form">
                     {% csrf_token %}
                     <div class="form-row">
                         <div class="col-lg-6">
@@ -61,9 +61,15 @@
                             </label>
                             {{ form.message }}
                         </div>
+                        <div class="col-lg-6">
+                            <label class="small mb-1" for="{{ form.room_price.id_for_label }}">
+                                Ціна Номера
+                            </label>
+                            {{ form.room_price }}
+                        </div>
 
                         {{ form.room_id }}
-                        {{ form.room_price }}
+
                         {{ form.user_id }}
 
 

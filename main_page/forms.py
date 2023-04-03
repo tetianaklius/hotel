@@ -37,7 +37,7 @@ class RoomReservationForm(forms.ModelForm):
         required=False)
 
     room_price = forms.DecimalField(widget=forms.TextInput(attrs={
-        'type': "hidden", "class": "form-control", "name": "room_price"}))
+        "class": "form-control", "name": "room_price"}))
 
     user_id = forms.IntegerField(widget=forms.TextInput(attrs={
         'type': "hidden", "class": "form-control", "name": "user_id"}),
