@@ -9,17 +9,26 @@
 {% block content %}
     <div class="container">
         <div class="row">
-            <div class="col-lg-3 mt-4">
+
+            <div class="col-lg-3">
+                <h2 class="my-4">Номери</h2>
                 <div class="list-group">
                     {% for category in room_category %}
                         <a href="{% url 'main_page:category' category.persons %}"
                            class="list-group-item
                                 {# підсвічуємо активний елемент #}
-                           {% if category.persons == quantity_person %} active{% endif %}"
-                        >{{ category.title }}
+                           {% if category.persons == quantity_person %} active{% endif %}">{{ category.title }}
                         </a>
                     {% endfor %}
+
+                    {#                    {% for category in room_category %}#}
+                    {#                        <a href="{% url "main_page:category" category.persons %}" class="list-group-item">#}
+                    {#                            {{ category.title }}#}
+                    {#                        </a>#}
+                    {#                    {% endfor %}#}
                 </div>
+            </div>
+            <!-- /.col-lg-3 -->
 
             <div class="col-lg-9 mt-4">
                 <div class="row">
@@ -47,7 +56,7 @@
                                 </div>
                                 <div class="card-footer text-center">
                                     <a class="btn btn-outline-success"
-                                       href="{% url "main_page:reservation" room.id person_quantity %}">
+                                       href="{% url "main_page:reservation" room.id quantity_person %}">
                                         Забронювати
                                     </a>
                                 </div>

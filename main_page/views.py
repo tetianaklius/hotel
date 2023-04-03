@@ -44,7 +44,7 @@ def main(request):
     })
 
 
-def room_selection(request, category_persons: int = 2):
+def room_selection(request, quantity_person: int = 2):
     """
     This function helps user to filter rooms by category and implements the price policy of the rooms.
     :param request: WSGIRequest from path function in urlpatterns.
@@ -54,11 +54,11 @@ def room_selection(request, category_persons: int = 2):
     """
 
     rooms = Room.objects.filter(is_visible=True)
-    if category_persons:
-        rooms = romms_actual_price(category_persons, rooms)
+    if quantity_person:
+        rooms = romms_actual_price(quantity_person, rooms)
 
     return render(request, "rooms.html", context={
-        "person_quantity": category_persons,
+        "quantity_person": quantity_person,
         "rooms": rooms,
         "room_category": CategoryRoom.objects.filter(is_visible=True),
     })
@@ -88,26 +88,28 @@ def reservation(request, room_id: int, persons: int):
     :return: render (HttpResponse).
     """
     user = request.user
-    room = Room.objects.get(id=room_id)
+    room = romms_actual_price(persons, Room.objects.filter(id=room_id)).first()
+    room_price = room.price
 
     if request.method == "POST":
         form = RoomReservationForm(data=request.POST)
         if form.is_valid():
             cd = form.cleaned_data
-            room = Room.objects.get(id=room_id)  # extract the room object to have access to all its attributes
+            # room = Room.objects.filter(id=room_id)  # extract the room object to have access to all its attributes
             # price depends on quantity of persons (according to price policy; look at room_selection function)
-            if cd["persons"] == 1:
-                room_price = room.price_1person
-            elif cd["persons"] == 2:
-                room_price = room.price_2person or room.price
-            elif cd["persons"] == 3:
-                room_price = room.price_3person or room.price
-            else:
-                room_price = room.price
+            # room_price = romms_actual_price(persons, room).first().price
+            # if cd["persons"] == 1:
+            #     room_price = room.price_1person
+            # elif cd["persons"] == 2:
+            #     room_price = room.price_2person or room.price
+            # elif cd["persons"] == 3:
+            #     room_price = room.price_3person or room.price
+            # else:
+            #     room_price = room.price
             reservation_instance = Reservation(
                 name=cd["name"],
                 user_id=request.user.id,
-                room=room,
+                room=room.first(),
                 message=cd["message"],
                 phone=cd["phone"],
                 persons=cd["persons"],
@@ -119,7 +121,7 @@ def reservation(request, room_id: int, persons: int):
             return HttpResponseRedirect(reverse("main_page:main_path"))
 
     else:
-        room_price = room.price
+        # room_price = room.price
         # persons = room.category.persons
 
         name = user.first_name if user.is_authenticated else None
@@ -132,7 +134,7 @@ def reservation(request, room_id: int, persons: int):
 
         form = RoomReservationForm(initial={
             'room_id': room_id,
-            'room_price': int(room_price),
+            'room_price': room_price,
             'persons': persons,
             'name': name,
             'last_name': last_name,

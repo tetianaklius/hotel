@@ -22,7 +22,7 @@ class RoomReservationForm(forms.ModelForm):
         "data-msg": "Please enter at least 4 chars"}))
 
     persons = forms.IntegerField(widget=forms.TextInput(attrs={
-        'class': 'form-control', 'placeholder': ""
+        'class': 'form-control', 'placeholder': "", "readonly": "true"
     }))
 
     message = forms.CharField(max_length=500, required=False, widget=forms.Textarea(attrs={
@@ -37,7 +37,7 @@ class RoomReservationForm(forms.ModelForm):
         required=False)
 
     room_price = forms.DecimalField(widget=forms.TextInput(attrs={
-        "class": "form-control", "name": "room_price"}))
+        "class": "form-control", "name": "room_price", "readonly": "true"}))
 
     user_id = forms.IntegerField(widget=forms.TextInput(attrs={
         'type': "hidden", "class": "form-control", "name": "user_id"}),
