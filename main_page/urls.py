@@ -14,7 +14,7 @@ urlpatterns = [
     path("rooms/room/reservation/<int:room_id> <int:persons>/", reservation, name="reservation"),
     path("reservation/message/", message, name="message"),
 
-    path("rooms/room/<int:room_id>/", room_details, name="room_details"),
+    path("rooms/room/<int:room_id> <int:persons>/", room_details, name="room_details"),
 
     path("manager/update_reserve/<int:pk>/", update_reservation, name="update_reservation"),
     path("manager/reserve_list/", list_reservations, name="list_reservations"),

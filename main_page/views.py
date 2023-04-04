@@ -64,11 +64,13 @@ def room_selection(request, quantity_person: int = 2):
     })
 
 
-def room_details(request, room_id: int):
+def room_details(request, room_id: int, persons: int):
     """
     This function render the page with detailed information of selected room (instance of class Room).
     :param request: WSGIRequest from path function in urlpatterns.
     :param room_id: id of selected room.
+    :param persons: this is value of attribute "persons" of selected room category,
+                    the number of people who will live in the room.
     :return: render html page (HttpResponse).
     """
     if room_id:
@@ -76,6 +78,7 @@ def room_details(request, room_id: int):
         return render(request, "room_details.html", context={
             "room": room,
             "room_photos": RoomPhoto.objects.filter(room__id=room_id, room__is_visible=True).order_by("id"),
+            "persons": persons,
         })
 
 
@@ -138,6 +141,7 @@ def reservation(request, room_id: int, persons: int):
     return render(request, "reservation.html", context={
         "form": form,
         "room": room,
+        "persons": persons,
     })
 
 
