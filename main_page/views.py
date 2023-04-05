@@ -44,7 +44,7 @@ def main(request):
     })
 
 
-def room_selection(request, quantity_person: int = 2):
+def rooms(request, persons: int):
     """
     This function helps user to filter rooms by category and implements the price policy of the rooms.
     :param request: WSGIRequest from path function in urlpatterns.
@@ -53,18 +53,18 @@ def room_selection(request, quantity_person: int = 2):
     :return: render html page with filtered rooms with actual prices (according to price policy).
     """
 
-    rooms = Room.objects.filter(is_visible=True)
-    if quantity_person:
-        rooms = rooms_actual_price(quantity_person, rooms)
+    rooms_query = Room.objects.filter(is_visible=True)
+    if persons:
+        rooms_query = rooms_actual_price(persons, rooms_query)
 
     return render(request, "rooms.html", context={
-        "quantity_person": quantity_person,
-        "rooms": rooms,
+        "persons": persons,
+        "rooms": rooms_query,
         "room_category": CategoryRoom.objects.filter(is_visible=True),
     })
 
 
-def room_details(request, room_id: int, persons: int):
+def room_details(request, room_id: int, persons: int = 2):
     """
     This function render the page with detailed information of selected room (instance of class Room).
     :param request: WSGIRequest from path function in urlpatterns.
