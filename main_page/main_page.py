@@ -4,7 +4,7 @@ import telebot
 # the logic of the room price policy and the function of informing the staff are written here
 
 def message_telegram(reservation):
-    # informing the staff about the new reservation request
+    # informing the staff about the new reservation request via telegram
     TOKEN = '5683712081:AAHOCCORZKYWHcnZ72U2nhnjK0h42HToBYY'
     bot = telebot.TeleBot(TOKEN)
     bot.send_message(
@@ -22,7 +22,7 @@ def rooms_actual_price(persons: int, rooms):
     variables) according to the condition (if such a price exist (is filled by site administrator)).
     :param persons: the needed number of guests.
     :param rooms: one or few objects (instances) of the Room class.
-    :return: filtered rooms objects (with defined prices).
+    :return: filtered rooms objects (with actual prices).
     """
     if persons == 1:
         rooms_show = rooms.filter(for_single=True)  # filtered rooms by "for_single" value
@@ -60,38 +60,3 @@ def rooms_actual_price(persons: int, rooms):
         rooms_show = rooms
 
     return rooms_show
-######################################################################################################
-# # tkinter message window
-# window = tkinter.Tk()
-#
-# # window geometry
-# window_height = 250
-# window_width = 450
-# screen_width = window.winfo_screenwidth()  # gets the value of the width of the user`s screen
-# screen_height = window.winfo_screenheight()  # gets the value of the height of the user`s screen
-# x_coordinate = int((screen_width / 2) - (window_width / 2))
-# y_coordinate = int((screen_height / 2) - (window_height / 2))
-# window.geometry("{}x{}+{}+{}".format(window_width, window_height, x_coordinate, y_coordinate))
-#
-# window.resizable(False, False)  # to make the window with a fixed size
-# window.attributes('-topmost', 1)  # to put window at the top of the stacking order
-#
-# def close_win():
-#     window.destroy()
-#
-# window.title("Садиба «Леонтія»")
-# label = tkinter.Label(window, text="Вітаємо!\nЗаявку успішно надіслано!\n\n"
-#                                    "Невдовзі Вам зателефонує адміністратор", font=("Arial", 14),
-#                       fg="#483D8B"
-#                       )
-# label.pack(padx=20, pady=30)
-#
-# button = tkinter.Button(window, text="Гаразд", font=("Roboto", 12), foreground="#FFFFFF", command=close_win,
-#                         background="#483D8B"
-#                         )
-# button.pack(pady=20)
-#
-# window.mainloop()
-
-# messagebox.showinfo("Бронювання", "Заявка надіслана успішно, невдовзі Вам зателефонує адміністратор")
-######################################################################################################

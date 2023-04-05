@@ -4,8 +4,8 @@ from main_page.models import Reservation
 
 class RoomReservationForm(forms.ModelForm):
     """
-    This form is filled by the user and transmits this input information (name, last name, phone, email, message,
-    quantity of persons is needed) and some internal information (room id, room price, user id)
+    This form is filled by the user and transmits this input information (name, last name, phone, email, message),
+    some other information (room id, room price, quantity of persons is needed, user id)
     to the model Reservation. This information needed to send a room reservation request
     to the hotel. The request will be manually processed by the manager.
     """
