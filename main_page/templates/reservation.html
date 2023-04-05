@@ -52,8 +52,13 @@
                             {{ form.phone }}
                         </div>
                         <div class="col-lg-6">
-                            <label class="small mb-1" for="{{ form.persons.id_for_label }}">К-ть осіб</label>
-                            {{ form.persons }}
+                            {% if persons == 10 %}
+                                <label class="small mb-1" for="{{ form.persons.id_for_label }}">Код</label>
+                                {{ form.persons }}
+                            {% else %}
+                                <label class="small mb-1" for="{{ form.persons.id_for_label }}">К-ть осіб</label>
+                                {{ form.persons }}
+                            {% endif %}
                         </div>
                         <div class="col-lg-6">
                             <label class="small mb-1" for="{{ form.message.id_for_label }}">
@@ -76,7 +81,8 @@
                     </div>
                     <div class="form-row">
                         <div class="col-lg-12" style="margin-top: 33px;">
-                            <input class="btn btn-info btn-block" style="background: #ffb03b; border-color: #ffb03b" type="submit" value="Надіслати">
+                            <input class="btn btn-info btn-block" style="background: #ffb03b; border-color: #ffb03b"
+                                   type="submit" value="Надіслати">
                         </div>
                     </div>
                 </form>
