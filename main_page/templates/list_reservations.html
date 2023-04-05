@@ -13,6 +13,7 @@
 
                 {% for item in reservations %}
                     <div class="row">
+
                         <div class="col-md-3">
                             <a href="{% url "main_page:update_reservation" pk=item.pk %}">
                                 <button type="button" class="btn btn-primary">Опрацьовано</button>
@@ -21,15 +22,15 @@
                         </div>
                         <div class="col-md-3"><b>{{ item.name }}</b> {{ item.last_name }}</div>
                         <div class="col-md-3">{{ item.phone }}</div>
-                        <div class="col-md-3"><b>осіб: {{ item.persons }}</b>;
+                        <div class="col-md-3"><b>осіб: {{ item.persons }}</b>;</div>
+                        <div class="wrap-room">
                             <p><b>номер: {{ item.room.inn_number }}</b>;
-                            <br>{{ item.room.title }} <i style="color: lightslategray"> (id={{ item.room_id }})</i>
-                            <br>стандартна ціна: {{ item.room.price }}
-                            <br>для 1 особи: {{ item.room.price_1person }}
-                            <br>для 2-х: {{ item.room.price_2person }}
-                            <br>для 3-х: {{ item.room.price_3person }}
-                            <br>1 поверх: {{ item.room.first_floor }}
-                            <br>тварини: {{ item.room.with_pets }}, {{ item.room.price_pets }}</p>
+                                <br>{{ item.room.title }} <i style="color: lightslategray">
+                                    (id={{ item.room_id }})</i>
+                                <br>ціна: {{ item.room.price }} / для 1 особи: {{ item.room.price_1person }}
+                                <br> для 2-х: {{ item.room.price_2person }} / для 3-х: {{ item.room.price_3person }}
+                                <br>тварини: {{ item.room.with_pets }}, {{ item.room.price_pets }}
+                                <br>1 поверх: {{ item.room.first_floor }}</p>
                             <p><b>--></b><i>"{{ item.message }}"</i></p>
                             ——————————————
                         </div>
