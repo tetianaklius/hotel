@@ -33,7 +33,7 @@ DB_NAME = os.environ.get("DB_NAME")
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ["sadyba-leontiia.herokuapp.com"]
 
